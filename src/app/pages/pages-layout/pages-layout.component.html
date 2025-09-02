@@ -1,0 +1,85 @@
+<div class="">
+
+
+    <!-- <div class=" bg- blue-800 h-20 z-10">
+       <div class="text-red-500 flex justify-between mx-20 relative top-6 ">
+        <div>LOGO</div>
+        <div class="flex gap-4 ">
+         <a routerLink="homepage" 
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+         >
+         Home Page
+        </a>
+         <a routerLink="aboutus"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+         >
+         About Us
+        </a>
+
+        <a routerLink="gallery"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Gallery
+        </a>
+
+          <a routerLink="constitution"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Constitution
+        </a>
+
+        <a (click)="scrollToContact()"
+         class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base cursor-pointer"
+         >
+            Contact
+        </a>
+
+         </div>
+
+         <button class="flex justify-center items-center bg-red-500 text-white font-semibold w-20 h-8 rounded-lg border">
+            Join
+         </button>
+       </div>
+    </div>
+</div> -->
+
+
+<router-outlet></router-outlet>
+
+
+<div id="contact" class="bg-gray-600 h-full flex justify-center items-center p-4 text-white">
+    <div class="flex gap-10">
+        <div>
+            <p class="font-bold">Contact Numbers:</p>
+            <p class="mt-2">055028888888</p>
+        </div>
+        <div>
+         <h1 class="font-bold">Address:</h1>
+          <p class="mt-2">P. O. Box A64</p>
+          <p>La, Accra, Ghana</p>
+       </div>
+       <div>
+        <h1 class="font-bold">Email & Social Handles:</h1>
+        <p class="mt-2">Email: info&#64;anglosa194.com</p>
+        <p>Connect with us on socia media</p>
+       </div>
+    </div>
+    <div class="flex relative left-[8rem] space-x-10">
+        <div class="space-x-10">
+        <a href=""><img src="/facebook.png" class="w-10 "></a>
+        <a href=""><img src="/whatsapp.png" class="w-10"></a>
+        </div>
+        <div class="space-x-10">
+        <a href=""><img src="/instagram.png" class="w-10 "></a>
+        <a href=""><img src="/twitter.png" class="w-10 "></a>
+        </div>
+    </div>
+</div>

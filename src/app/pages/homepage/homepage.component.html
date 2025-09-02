@@ -1,0 +1,178 @@
+<div class="overflow-hidden">
+   
+    <!-- <div>
+      The world-acclaimed, Grammy-nominated Queen of Dancehall and Reggae artiste, Grace Latoya Hamilton, popularly known as Spice, last Friday, donated essential items to students of three basic schools.
+
+The donations in the La Dade Kotopon Municipality in Accra were undertaken in collaboration with the MYO Global Foundation.
+
+It highlights both organisations commitment to fostering educational development in underserved communities.
+
+As part of its dedication to early childhood education, MYO Global partnered with Spice to provide much-needed educational resources to students at La Anglican Basic School.
+
+The beneficiary schools included La Anglican 1 Junior High School (JHS), La Anglican 2 JHS and Anglican AME A Primary School.
+
+During the donation ceremony, Spice, who rose from humble beginnings in Old Briton, Jamaica, to achieve international acclaim, shared her journey with the students.
+
+She said, “Education opened doors for me that I never imagined possible. It is crucial that we invest in these young minds and provide them with the tools they need to succeed.”
+
+The donation included school uniforms for students in need, new designer school shoes to encourage proper school attendance and educational materials such as whiteboards.
+
+Others were essential hygiene supplies, nutritional snacks for students and a cash donation to further support the schools.
+
+
+Sarah Matey, Headmistress of La Anglican Basic School, expressed her heartfelt gratitude during the ceremony.
+    </div> -->
+
+ 
+    <div class="relative w-full h-screen overflow-hidden">
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover -z-10">
+    <source src="/drone1.mp4" type="video/mp4" />
+  </video>
+
+
+      <div class=" bg- blue-800 h-20 z-10">
+       <div class="text-red-500 flex justify-between mx-20 relative top-6 ">
+
+         <!-- SCHOOL LOGO -->
+        <div class="flex gap-2">
+            <img src="/schlogo1.png" class="w-10">
+            <p class="w-2 tracking-tight leading-tight font-bold mt-2 text-white">Anglosa 194</p>
+        </div>
+
+
+        <div class="flex gap-4 ">
+         <a routerLink="/homepage" 
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+         >
+         Home Page
+        </a>
+         <a routerLink="/aboutlayout"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+         >
+         About Us
+        </a>
+
+        <a routerLink="/gallery"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Gallery
+        </a>
+
+          <a routerLink="/constitution"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Constitution
+        </a>
+
+        <a routerLink="/location"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Location
+        </a>
+
+        <a (click)="scrollToContact()"
+         class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base cursor-pointer"
+         >
+            Contact
+        </a>
+
+         </div>
+
+         <button class="flex justify-center items-center bg-red-500 text-white font-semibold w-20 h-8 rounded-lg border">
+            Join
+         </button>
+       </div>
+    </div>
+
+     <!-- Content over the video -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full">
+     <div class="flex justify-center ">
+    <button (click)="theLogo()">
+    <img src="/schlogo1.png" class="transition-transform duration-500 hover:scale-110">
+    </button>
+    </div>
+    <h1 class="text-white text-4xl font-bold mb-20 animate-ping-slow">Welcome to Anglosa 194<br/><p class="flex justify-center">Site</p></h1>
+  </div>
+
+</div> 
+
+
+    <div  class="flex gap-20 justify-center mx-4">
+    <div  appScrollSlide [from]="'left'" [threshold]="0.2" class="text-center mt-20 mb-10 border-2 rounded-lg shadow-lg ">
+        <p class="font-bold text-[35px] mx-2"><span class="text-yellow-400">La Anglican <span class="text-black">1JHS</span></span><span class="text-purple-500"> Year Group</span><br/><span class="text-green-600">Association</span></p> 
+        <p class="mx-2">The Anglican 1 JSS Year Group Association (Anglosa 194) is an association<br/> 
+        that brings together all “1994 student” of La Anglican 1 JSS and creates for<br/> 
+        them a platform that will promote their common interests and<br/> 
+        bring development and progress to La Anglican 1 JSS and quality<br/> 
+        education in Ghana, and at the same time provide<br/>  
+        for other related matters connected with the wellbeing of<br/>  
+        members, their associates and La Anglican 1 JSS.
+        </p>
+    </div>
+
+
+    <div appScrollSlide [from]="'right'" [threshold]="0.2" class="text-center mt-20 mb-10 border-2 rounded-lg shadow-lg  ">
+        <p class="font-bold text-[35px] mx-2"><span class="text-green-600">La Anglican <span class="text-black">1JHS</span></span><span class="text-purple-500"> Year Group</span><br/><span class="text-yellow-400">Website</span></p> 
+        <p class="mx-2">We are delighted to launch the MOSA portal as a safe space for our Old<br/>
+          Scholars community to connect online with each other and the School.<br/> 
+         The portal was initiated by my predecessor and the Foundation trustees,<br/> 
+         and it is a pleasure to see the dream realised. I encourage Old Scholars far<br/>
+         and wide to register and enjoy making this portal their own.
+         </p>
+    </div>
+    </div>
+</div>
+
+         <!-- FOOTER -->
+<div id="contact" class="bg-gray-600 mt-10 h-full flex justify-center items-center p-4 text-white">
+    <div class="flex gap-10">
+        <div>
+            <p class="font-bold">Contact Numbers:</p>
+            <p class="mt-2">055028888888</p>
+        </div>
+        <div>
+         <h1 class="font-bold">Address:</h1>
+          <p class="mt-2">P. O. Box A64</p>
+          <p>La, Accra, Ghana</p>
+       </div>
+       <div>
+        <h1 class="font-bold">Email & Social Handles:</h1>
+        <p class="mt-2">Email: info&#64;anglosa194.com</p>
+        <p>Connect with us on socia media</p>
+       </div>
+    </div>
+    <div class="flex relative left-[8rem] space-x-10">
+        <div class="space-x-10">
+        <a href=""><img src="/facebook.png" class="w-10 "></a>
+        <!-- <a href=""><img src="/whatsapp.png" class="w-10"></a> -->
+         <a href="https://wa.me/+233272062942" target="_blank" rel="noopener">
+          <img src="/whatsapp.png" class="w-10">
+         </a>
+
+        </div>
+        <div class="space-x-10">
+        <a href=""><img src="/instagram.png" class="w-10 "></a>
+        <a href=""><img src="/twitter.png" class="w-10 "></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- bg-[url(/schlogo.png)] -->

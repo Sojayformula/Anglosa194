@@ -1,0 +1,213 @@
+       <!-- EMAIL --> 
+      <div class="bg-red-600 py-1 text-white">
+     <a href="mailto:formula865@yahoo.com" class="flex mx-20 items-center">
+    <span class="material-symbols-outlined">mail</span>
+    <span class="tracking-tight font-bold text-sm ml-1">
+      anglosa194&#64;yahoo.com.gh
+    </span>
+  </a>
+</div>
+
+
+ <div class=" bg -blue-800 h-20 z-10 ">
+
+       <div class="bg- blue-800 h-16 md:h-20 z-10 flex items-center px-4 md:px-20">
+    <div class="flex justify-between items-center w-full text- red-500">
+      
+
+       <!-- SCHOOL LOGO -->
+        <div class="flex gap-2">
+            <img src="/schlogo1.png" class="w-10">
+            <p class="w-2 tracking-tight leading-tight font-bold mt-2">Anglosa 194</p>
+        </div>
+
+      <!-- Links -->
+      <div class="hidden md:flex gap-4">
+        <a routerLink="/homepage"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          Home Page
+        </a>
+        <a routerLink="/aboutlayout"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          About Us
+        </a>
+        <a routerLink="/gallery"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          Gallery
+        </a>
+        <a routerLink="/constitution"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          Constitution
+        </a>
+         <a routerLink="/location"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-black border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Location
+        </a>
+        <a (click)="scrollToContact()" class="text-black cursor-pointer px-3 py-2 text-sm md:text-base">
+          Contact
+        </a>
+      </div>
+
+      <!-- Join Button -->
+      <button class="bg-red-500 text-white font-semibold px-4 py-2 rounded-lg border text-sm md:text-base">
+        Join
+      </button>
+    <!-- </div> -->
+  </div>
+    </div>
+
+
+
+<div class="bg-[url('/grouppic.jpg')] bg-no-repeat bg-center h-[25rem]">
+<div class="flex gap-10 justify-center items-center relative top-40 font-bold ">
+<a routerLink="/the-school">
+    <img src="schlogo1.png" class="bg-black rounded-xl w-40 h-[8rem] shadow-red-500 shadow-2xl animate-bounce"><p class="text-red-800 text-lg text-center animate-bounce">The School</p></a>
+<!-- <a routerLink="year-group">       <button (click)="theSch()">     <button (click)="yearGroup()">-->
+    <a routerLink="/year-group"><img src="multipleusers2.png" class="bg-black rounded-xl w-40 h-32 shadow-yellow-500 shadow-2xl animate-sideToSide"><p class="text-red-800 text-lg text-center animate-bounce">Year Groups</p></a>
+<!-- <a routerLink="volunteers"> -->
+    <button (click)="volunteer()" class="relative left-6"><img src="morterboard2.png" class="bg-black rounded-xl w-40  shadow-green-500 shadow-2xl animate-bounce"><p class="text-red-800 text-lg text-center animate-bounce">The School</p></button>
+</div>
+</div> 
+
+
+
+
+
+<!-- <div class="flex flex-wrap justify-center gap-10 my-10 text-center">
+
+  <div>
+    <p class="text-4xl font-bold text-green-600" [appCountUp]="150" [duration]="3000"></p>
+    <p class="text-lg">Members</p>
+  </div>
+
+  <div>
+    <p class="text-4xl font-bold text-blue-600" [appCountUp]="75" [duration]="2000"></p>
+    <p class="text-lg">Events</p>
+  </div>
+
+  <div>
+    <p class="text-4xl font-bold text-red-600" [appCountUp]="25" [duration]="2500"></p>
+    <p class="text-lg">Projects</p>
+  </div>
+
+</div> -->
+<div class="flex justify-center items-center">
+<div class="flex justify-center items-center gap-10 bg-gradient-to-b from-purple-500 via-purple-800 to-purple-900 h-full w-full [20rem]">
+    <div>
+<p [appCountUp]="2022" class="text-white font-bold text-3xl"></p>
+<p class="text-white font-semibold">Esterblished</p>
+</div>
+<div>
+<p [appCountUp]="50" class="text-white font-bold text-3xl"></p>
+<p class="text-white font-semibold">Student</p>
+</div>
+<div>
+<p [appCountUp]="22" class="text-white font-bold text-3xl"></p>
+<p class="text-white font-semibold">Female</p>
+</div>
+<div>
+<p [appCountUp]="28" class="text-white font-bold text-3xl"></p>
+<p class="text-white font-semibold">Male</p>
+</div>
+<div>
+<p [appCountUp]="49" class="text-white font-bold text-3xl"></p>
+<p class="text-white font-semibold">Nationality</p>
+</div>
+<div>
+<p [appCountUp]="1" class="text-white font-bold text-3xl"></p>
+<p class="text-white font-semibold">Foreigner</p>
+</div>
+<!-- <p [appCountUp]="2000" class="text-white font-bold text-3xl"></p> -->
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="">
+
+<div class="flex justify-between text- center mt-10 mb-10 mx-10 bg-gray-300">
+<div class="border-2 shadow-xl ">
+<p class="font-bold text-[30px] mx-4 mt-32 "> A Message From Our Principal</p>
+ 
+<p class="mx-4 ">Greetings from Ghana and from Ghana International School!<br/>
+We are excited to welcome you to our School (GIS) and to have<br/>
+you visit virtually by taking a walk through our pages. For close<br/>
+to 70 years, this great institution has charted a path of excellence<br/>
+in international education and continues to be a leader in transformational<br/>
+and collaborative learning. We understand clearly that student learning,<br/>
+wellbeing and development should be at the heart of all we do. Our dedicated<br/>
+team of teaching and non-teaching staff demonstrate this daily to transform<br/>
+how we live, learn and grow at GIS.  As a school accredited by<br/>
+both the NEASC (New England Association of Schools and Colleges)<br/>
+and the CIS (Council of International Schools), we are happy to<br/>
+open our doors to people “from all the countries of the Earth”<br/>
+ and are confident that GIS will be a transformative experience,<br/>
+whether you join the community as a student, parent, staff or<br/>
+visitor. Walking through our hallways and visiting our classrooms,<br/>
+we are convinced that every effort has been put into ensuring<br/>
+a safe and caring environment for each and every member of our community.<br/>
+
+Enjoy the virtual visit and when you are done, why not get in<br/>
+ touch to arrange to meet us in person?<br/>
+
+Looking forward to meeting you!<br/>
+</p>
+ 
+
+<p class="mt-10 mx-4">
+Frank D. Amponsah-Mensah Esq.<br/>
+Principal/Head of School<br/>
+</p>
+</div>
+
+<div class="border-2 shadow-xl">
+    <img src="/blackcoat.jpg" class="w-[36rem]">
+</div>
+</div>
+
+
+
+       <!-- FOOTER -->
+<div id="contact" class="bg-gray-600 h-full flex justify-center items-center p-4 text-white">
+    <div class="flex gap-10">
+        <div>
+            <p class="font-bold">Contact Numbers:</p>
+            <p class="mt-2">055028888888</p>
+        </div>
+        <div>
+         <h1 class="font-bold">Address:</h1>
+          <p class="mt-2">P. O. Box A64</p>
+          <p>La, Accra, Ghana</p>
+       </div>
+       <div>
+        <h1 class="font-bold">Email & Social Handles:</h1>
+        <p class="mt-2">Email: info&#64;anglosa194.com</p>
+        <p>Connect with us on socia media</p>
+       </div>
+    </div>
+    <div class="flex relative left-[8rem] space-x-10">
+        <div class="space-x-10">
+        <a href=""><img src="/facebook.png" class="w-10 "></a>
+        <a href=""><img src="/whatsapp.png" class="w-10"></a>
+        </div>
+        <div class="space-x-10">
+        <a href=""><img src="/instagram.png" class="w-10 "></a>
+        <a href=""><img src="/twitter.png" class="w-10 "></a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+

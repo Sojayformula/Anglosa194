@@ -1,0 +1,566 @@
+
+<div class="overflow-hidden">
+    <!-- EMAIL -->
+    <div class="bg-red-600 py-1 text-white">
+    <div class="flex mx-20">
+     <span class="material-symbols-outlined ">mail</span>
+     <span class="tracking-tight font-bold text-sm">anglosa194&#64;yahoo.com.gh</span>
+     </div>
+    </div>
+
+  <!-- NAVBAR -->
+  <div class="bg- blue-800 h-16 md:h-20 z-10 flex items-center px-4 md:px-20">
+    <div class="flex justify-between items-center w-full text- red-500">
+      
+
+       <!-- SCHOOL LOGO -->
+        <div class="flex gap-2">
+            <img src="/schlogo1.png" class="w-10">
+            <p class="w-2 tracking-tight leading-tight font-bold mt-2">Anglosa 194</p>
+        </div>
+
+      <!-- Links -->
+      <div class="hidden md:flex gap-4">
+        <a routerLink="/homepage"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          Home Page
+        </a>
+        <a routerLink="/aboutlayout"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          About Us
+        </a>
+        <a routerLink="/gallery"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          Gallery
+        </a>
+        <a routerLink="/constitution"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          Constitution
+        </a>
+         <a routerLink="/location"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-black border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Location
+        </a>
+        <a (click)="scrollToContact()" class="text-black cursor-pointer px-3 py-2 text-sm md:text-base">
+          Contact
+        </a>
+      </div>
+
+      <!-- Join Button -->
+      <button class="bg-red-500 text-white font-semibold px-4 py-2 rounded-lg border text-sm md:text-base">
+        Join
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="bg-[url('/studentgroup.jpg')] bg-center bg-cover h-[25rem] sm:h-[24rem] md:h- [30rem] flex justify-center items-center">
+    <div class="bg-black w-full h-full opacity-50">
+      <!-- Back Button -->
+      <div class="relative top-[-13rem] bg-white right-[14rem]">
+        <button (click)="back()" class="text-black flex gap-2 text-base md:text-lg">
+          <img src="/back.png" class="w-5 md:w-6">Back
+        </button>
+      </div>
+    <p class="animate-marquee text-4xl sm:text-6xl md:text-9xl font-extrabold text-white text-center px-2 mt-24">
+      <!-- <span class="text-red-600">A</span>
+      <span class="text-yellow-600">g</span>
+      <span class="text-green-600">l</span>
+      <span class="text-blue-600">o</span>
+      <span class="text-red-600">s</span>
+      <span class="text-yellow-600">a</span> 
+      <span class="text-purple-600">1</span>
+      <span class="text-green-600">9</span>
+      <span class="text-yellow-600">4</span> -->
+      Aglosa 194
+    </p>
+  </div>
+  </div>
+
+  <!-- VISION & MISSION -->
+  <div class="bg-[url('/studentgroup1.jpg')] bg-no-repeat bg-cover bg-center">
+    <div class="flex flex-col md:flex-row">
+      
+      <!-- Mission -->
+      <div class="bg-black bg-opacity-70 text-white w-full flex flex-col justify-center items-center p-6 md:h-[28rem]">
+        <p class="text-2xl md:text-4xl mb-4">OUR MISSION</p>
+        <p class="text-sm sm:text-base md:text-xl max-w-md text-center">
+          <!-- To provide an internationally diverse school experience that instills 
+          an understanding of each other, promotes holistic development, life 
+          skills and learning through a rigorous curriculum that meets international standards -->
+          To promote the noble ideals of St. Paul's Anglican 1 JHS, in line with the
+          aspiration of the founders which is to promote education and honour those 
+          who work for the promotion of same and to ensure the uplifting of 1994 
+          old students.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div class="bg-white bg-opacity-50 w-full flex flex-col justify-center items-center font-bold p-6 md:h-[28rem]">
+        <p class="text-2xl md:text-4xl mb-4">OUR VISION</p>
+        <p class="text-sm sm:text-base md:text-xl max-w-md text-center">
+         "A highly respected year group, recognized both locally and 
+         internationally, dedicated to providing excellent support and 
+         promoting the wellbeing of its members. Our mission is to unite 
+         all 1994 alumni of La St. Paul’s Anglican 1 JHS."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBJECTIVES -->
+  <div class="text-3xl sm:text-4xl md:text-6xl font-semibold h-[8rem] flex items-center justify-center">
+    𝕆𝕌ℝ 𝕆𝔹𝕁𝔼ℂ𝕋𝕀𝕍𝔼
+  </div>
+
+  <!-- ROUTER BUTTONS -->
+  <div class="flex flex-col md:flex- row justify- center items- center gap-6 mt-10 px-4">
+    <div class="flex flex-col md:flex-row text-center ">
+   <div class="space-y-10 mx-10">
+
+    <div class="relative h-[5rem] w-[90%] sm:w-[70%] md:w-64 overflow-hidden group"
+         routerLinkActive="bg-green-700 text-white"
+         [routerLinkActiveOptions]="{ exact: true }"
+         >
+      <a routerLink="objective1"
+         fragment="objective1"
+         class="relative z-10 font-bold md:px-10 py-2  text -center w-[10rem] text-sm md:text-base block">
+        <p class="w-[10rem]">To improve and promote team spirit among the members of the association.:</p>
+      </a>
+      <div class="absolute inset-0 bg-green-500 -translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+    </div>
+
+   
+    <div class="relative h-[5rem] w-[90%] sm:w-[70%] md:w-64 overflow-hidden group"
+         routerLinkActive="bg-green-700 text-white"
+         [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="objective2"
+         fragment="objective2"
+         class="relative z-10 font-bold md:px-10 py-2 text-center w-[10rem] text-sm md:text-base block">
+        <p class="w-[10rem]">To Develop Leadership Skills</p>
+      </a>
+      <div class="absolute inset-0 bg-green-500 -translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+    </div>
+    
+
+    
+    <div class="relative h-[5rem] w-[90%] sm:w-[70%] md:w-64 overflow-hidden group"
+         routerLinkActive="bg-green-700 text-white"
+         [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="objective3"
+         fragment="objective3"
+         class="relative z-10 font-bold md:px-10 py-2 text-center w-[10rem] text-sm md:text-base block">
+        <p class="w-[10rem]">To promote the interest of members through coexistence and peacefulness</p>
+      </a>
+      <div class="absolute inset-0 bg-green-500 -translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+    </div>
+    </div> 
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-10 px-4">
+  <div class="flex flex-col md:flex-row gap-10 text-center mx-20 space-y-10 md:space-y-0">
+
+   
+
+
+
+    <!-- <div class="relative h-[5rem] w-[90%] sm:w-[70%] md:w-64 overflow-hidden group">
+      <a routerLink="/objective1" 
+       routerLinkActive="bg-green-700 text-white" 
+       fragment="objective1" 
+      class="relative z-10 font-bold px- 4 py- 2 text-center w-[10rem] full text-sm md:text-base"
+      >
+        <p class="w-[10rem]">To Maintain A High Academic Standard That:</p>
+      </a>
+      <div class="absolute inset-0 bg-green-500 -translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+    </div> -->
+
+
+
+     <!-- <div class="relative h-[5rem] w-[90%] sm:w-[70%] md:w-64 overflow-hidden group">
+      <a routerLink="/objective2" 
+       routerLinkActive="bg-green-700 text-white" 
+       [routerLinkActiveOptions]="{ exact: true }"
+      fragment="objective1" 
+      class="relative z-10 font-bold px- 4 py-2 text-center w-[10rem] full text-sm md:text-base"
+      >
+        <p class="w-[10rem]">To Develop Leadership Skills</p>
+      </a>
+      <div class="absolute inset-0 bg-green-500 -translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+    </div> -->
+
+
+    <!-- <div class="relative h-[5rem] w-[90%] sm:w-[70%] md:w-64 overflow-hidden group">
+      <a routerLink="/objective3" 
+       routerLinkActive="bg-green-700 text-white" 
+       [routerLinkActiveOptions]="{ exact: true }"
+
+      fragment="objective1" 
+      class="relative z-10 font-bold px- 4 py-2 text-center w-[10rem] full text-sm md:text-base"
+      >
+        <p class="w-[10rem]">To Promote Unity & Discipline</p>
+      </a>
+      <div class="absolute inset-0 bg-green-500 -translate-y-full group-hover:translate-y-0 transition-transform duration-700"></div>
+    </div> -->
+
+  </div>
+</div>
+  <!-- ROUTER OUTLET -->
+  <div class="relative md:right-[10rem]">
+    <router-outlet></router-outlet>
+ </div>
+    
+    </div> 
+  </div>
+
+  <!-- FOOTER -->
+  <div id="contact" class="bg-gray-600 mt-10 text-white p-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+      <div>
+        <p class="font-bold">Contact Numbers:</p>
+        <p class="mt-2">055028888888</p>
+      </div>
+      <div>
+        <h1 class="font-bold">Address:</h1>
+        <p class="mt-2">P. O. Box A64</p>
+        <p>La, Accra, Ghana</p>
+      </div>
+      <div>
+        <h1 class="font-bold">Email & Social Handles:</h1>
+        <p class="mt-2">info&#64;anglosa194.com</p>
+        <p>Connect with us on social media</p>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center md:justify-end gap-6 mt-6">
+      <a href=""><img src="/facebook.png" class="w-8 md:w-10"></a>
+      <a href=""><img src="/whatsapp.png" class="w-8 md:w-10"></a>
+      <a href=""><img src="/instagram.png" class="w-8 md:w-10"></a>
+      <a href=""><img src="/twitter.png" class="w-8 md:w-10"></a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<div>
+
+
+    
+ <div class=" bg-blue-800 h-20 z-10 ">
+       <div class="text-red-500 flex justify-between mx-20 relative top-6 ">
+        <div>
+            <button (click)="back()" class="text-gray-400 flex gap-2 text-lg"><img src="/back.png" class="w-6">Back</button>
+        </div>
+        <div class="flex gap-4 ">
+         <a routerLink="homepage" 
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+         >
+         Home Page
+        </a>
+         <a routerLink="aboutus"
+          routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+         >
+         About Us
+        </a>
+
+        <a routerLink="gallery"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Gallery
+        </a>
+
+          <a routerLink="constitution"
+           routerLinkActive="bg-[#F3F3F16E] border border-white"
+          [routerLinkActiveOptions]="{ exact: false }"
+          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          >
+          Constitution
+        </a>
+
+        <a (click)="scrollToContact()"
+         class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base cursor-pointer"
+         >
+            Contact
+        </a>
+
+         </div>
+
+         <button class="flex justify-center items-center bg-red-500 text-white font-semibold w-20 h-8 rounded-lg border">
+            Join
+         </button>
+       </div>
+    </div>
+
+      BACKGROUND IMAGE
+       <div class="bg-[url('/studentgroup.jpg')] bg-center bg-cover h-[30rem]">
+        <p class="inline-block animate-marquee text-center relative top-[12rem] text-9xl font-[800] text-white">
+            <span class="text-red-600">A</span>
+            <span class="text-yellow-600">g</span>
+            <span class="text-green-600">l</span>
+            <span class="text-blue-600">o</span>
+            <span class="text-red-600">s</span>
+            <span class="text-yellow-600">a</span> 
+            <span class="text-purple-600">1</span>
+            <span class="text-green-600">9</span>
+            <span class="text-yellow-600">4</span>
+       </div>
+
+
+       <div class="overflow-hidden whitespace-nowrap">
+  <p class="inline-block animate-marquee text-lg font-bold">
+    🎉 Welcome to our Angular + Tailwind project! 🎉
+  </p>
+</div>
+
+
+                 VISION AND MISSION
+ <div class="">
+<div class="bg-[url('/studentgroup1.jpg')] bg-no-repeat bg-cover bg-center h-auto">
+  <div class="flex flex-col md:flex-row">
+    
+    OUR MISSION
+    <div class="bg-black bg-opacity-70 text-white w-full flex flex-col justify-center items-center p-6 md:h-[28rem]">
+      <p class="text-2xl md:text-4xl mb-4">OUR MISSION</p>
+      <p class="text-base md:text-xl max-w-md text-center">
+        To provide an internationally diverse school experience that 
+        instills an understanding of each other, promotes holistic 
+        development, life skills and learning through a rigorous 
+        curriculum that meets international standards
+      </p>
+    </div>
+
+    OUR VISION
+    <div class="bg-white bg-opacity-50 w-full flex flex-col justify-center items-center font-[800] p-6 md:h-[28rem]">
+      <p class="text-2xl md:text-4xl mb-4">OUR VISION</p>
+      <p class="text-base md:text-xl max-w-md text-center">
+        A highly respected school, locally and internationally recognized, 
+        providing excellent education in a multicultural setting that 
+        produces responsible global citizens
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+            THE GROUP OBJECTIVES
+    <div class="text-6xl font-SEMIbold h-[10rem] flex flex-col items-center justify-center text- white">
+        
+       𝕆𝕌ℝ 𝕆𝔹𝕁𝔼ℂ𝕋𝕀𝕍𝔼
+    </div>
+
+
+
+      ROUTER LINK
+       <div class="flex justify-betwee mt-10 mx-20">
+    <div class="mt- 10 space-y-10 ">
+ <div 
+  class="relative h-[5rem] w-32 overflow-hidden group mx- 10"
+  routerLink="/the-school"
+  routerLinkActive="active"
+>
+  The button text
+  <button class="relative z-10 px-4 py-2 font-barlow font-bold">To Maintain A High Accadamic Standard That:</button>
+
+  Sliding background
+  <div
+    class="absolute inset-0 bg-green-500 translate-y-[-100%] 
+           group-hover:translate-y-0 transition-transform duration-700">
+  </div>
+</div>
+
+The School
+<div
+  class="relative h-[5rem] w-32 overflow-hidden group mx- 10"
+  routerLink="/the-school"
+  routerLinkActive="active"
+>
+  <button class="relative z-10 font-barlow font-bold px-4 py-2 text-black group-[.active]:text-white">
+    To Maintain A High Accadamic Standard That:
+  </button>
+
+  Sliding background
+  <div
+    class="absolute inset-0 bg-green-500 translate-y-[-100%] 
+           group-hover:translate-y-0 transition-transform duration-700
+           group-[.active]:translate-y-0">
+  </div>
+</div>
+
+The Woman
+<div
+  class="relative h-[5rem] w-32 overflow-hidden group mx- 10"
+  routerLink="/woman"
+  routerLinkActive="active"
+>
+  <button class="relative z-10 font-barlow font-bold px-4 py-2 text-black group-[.active]:text-white">
+    To Maintain A High Accadamic Standard That:
+  </button>
+
+  <div
+    class="absolute inset-0 bg-green-500 translate-y-[-100%] 
+           group-hover:translate-y-0 transition-transform duration-700
+           group-[.active]:translate-y-0">
+  </div>
+</div>
+</div>
+
+<div class="relative left-[10rem]">
+    <div>
+      ggchcvvccc c
+    </div>
+</div>
+</div>
+
+
+
+
+
+    FOOTER
+     
+<div id="contact" class="bg-gray-600 mt-10 h-full flex justify-center items-center p-4 text-white">
+    <div class="flex gap-10">
+        <div>
+            <p class="font-bold">Contact Numbers:</p>
+            <p class="mt-2">055028888888</p>
+        </div>
+        <div>
+         <h1 class="font-bold">Address:</h1>
+          <p class="mt-2">P. O. Box A64</p>
+          <p>La, Accra, Ghana</p>
+       </div>
+       <div>
+        <h1 class="font-bold">Email & Social Handles:</h1>
+        <p class="mt-2">Email: info&#64;anglosa194.com</p>
+        <p>Connect with us on socia media</p>
+       </div>
+    </div>
+    <div class="flex relative left-[8rem] space-x-10">
+        <div class="space-x-10">
+        <a href=""><img src="/facebook.png" class="w-10 "></a>
+        <a href=""><img src="/whatsapp.png" class="w-10"></a>
+        </div>
+        <div class="space-x-10">
+        <a href=""><img src="/instagram.png" class="w-10 "></a>
+        <a href=""><img src="/twitter.png" class="w-10 "></a>
+        </div>
+    </div>
+</div>
+
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- app.component.html -->
+ <!-- <div class="space-y-4">
+
+<div
+  class="relative h-[5rem] w-32 overflow-hidden group mx-10"
+  [class.active]="activeBtn === 'school'"
+  (click)="setActive('school')"
+>
+  <button class="relative z-10 px-4 py-2" [class.text-white]="activeBtn === 'school'">
+    the school
+  </button>
+
+  <div
+    class="absolute inset-0 bg-green-500 translate-y-[-100%] 
+           group-hover:translate-y-0 transition-transform duration-700"
+    [class.translate-y-0]="activeBtn === 'school'">
+  </div>
+</div> 
+
+
+
+<div
+  class="relative h-[5rem] w-32 overflow-hidden group mx-10"
+  [class.active]="activeBtn === 'woman'"
+  (click)="setWoman('woman')"
+>
+  <button class="relative z-10 px-4 py-2" [class.text-white]="activeBtn === 'woman'">
+    the woman
+  </button>
+
+  <div
+    class="absolute inset-0 bg-green-500 translate-y-[-100%] 
+           group-hover:translate-y-0 transition-transform duration-700"
+    [class.translate-y-0]="activeBtn === 'woman'">
+  </div>
+</div> 
+
+
+
+<div
+  class="relative h-[5rem] w-32 overflow-hidden group mx-10"
+  [class.active]="activeBtn === 'page'"
+  (click)="setSchool('page')"
+>
+  <button class="relative z-10 px-4 py-2" [class.text-white]="activeBtn === 'page'">
+    the page
+  </button>
+
+  <div
+    class="absolute inset-0 bg-green-500 translate-y-[-100%] 
+           group-hover:translate-y-0 transition-transform duration-700"
+    [class.translate-y-0]="activeBtn === 'page'">
+  </div>
+</div> 
+
+</div> -->
+
