@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <!-- Links (desktop only) -->
+    <!-- Links -->
     <div class="hidden md:flex gap-4">
       <a routerLink="/homepage" routerLinkActive="bg-[#F3F3F16E] border border-white"
         class="text-black px-3 py-2 rounded-md text-sm md:text-base">Home Page</a>
@@ -45,29 +45,29 @@
   </div>
 </div>
 
-<!-- HERO IMAGE SECTION -->
+<!-- HERO SECTION -->
 <div class="bg-[url('/grouppic.jpg')] bg-no-repeat bg-center bg-cover h-[20rem] sm:h-[25rem] flex justify-center items-center">
   <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 text-center font-bold">
     <a routerLink="/the-school">
       <img src="schlogo1.png"
         class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-red-500 shadow-2xl animate-bounce">
-      <p class="text-red-800 text-base sm:text-lg mt-2">The School</p>
+      <p class="text-red-800 text-base sm:text-lg mt-2 animate-bounce">The School</p>
     </a>
     <a routerLink="/year-group">
       <img src="multipleusers2.png"
         class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-yellow-500 shadow-2xl animate-sideToSide">
-      <p class="text-red-800 text-base sm:text-lg mt-2">Year Groups</p>
+      <p class="text-red-800 text-base sm:text-lg mt-2 animate-bounce">Year Groups</p>
     </a>
     <button (click)="volunteer()">
       <img src="morterboard2.png"
-        class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-green-500 shadow-2xl animate-bounce">
-      <p class="text-red-800 text-base sm:text-lg mt-2">Volunteer</p>
+        class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-green-500 shadow-2xl animate-bounce relative left-10">
+      <p class="text-red-800 text-base sm:text-lg mt-2 animate-bounce relative left-10">Volunteer</p>
     </button>
   </div>
 </div>
 
 <!-- STATS SECTION -->
-<div class="bg-gradient-to-b from-purple-500 via-purple-800 to-purple-900 py-10 px-4">
+<div class="bg-gradient-to-b from-purple-500 via-purple-800 to-purple-900 px-4">
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center text-white">
     <div>
       <p [appCountUp]="2022" class="font-bold text-2xl sm:text-3xl"></p>
