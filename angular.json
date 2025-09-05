@@ -88,7 +88,12 @@
             "assets": [
                "src/favicon.ico",
                "src/assets",
-               "src/public"
+               "src/public",
+                 {
+              "glob": "**/*",
+              "input": "public",
+              "output": "/"
+            }
              ],
             "styles": [
               "src/styles.scss"

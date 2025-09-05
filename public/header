@@ -1,0 +1,10 @@
+/drone1.mp4
+  Cache-Control: public, max-age=31536000
+
+/drone1.webm
+  Cache-Control: public, max-age=31536000
+
+/*.jpg
+  Cache-Control: public, max-age=31536000
+/*.png
+  Cache-Control: public, max-age=31536000
