@@ -32,19 +32,152 @@
       </div>
 
       <!-- CTA Button -->
-      <button class="hidden sm:block bg-red-500 text-white font-semibold px-4 py-2 rounded-lg text-sm md:text-base">
+      <button (click)="modal()" class="hidden sm:block bg-red-500 text-white font-semibold px-4 py-2 rounded-lg text-sm md:text-base">
         Join
       </button>
+
 
       <!-- Hamburger Menu (mobile) -->
       <button class="md:hidden text-white">☰</button>
     </div>
   </div>
 
-  <!-- HERO IMAGE -->
-  <div class="bg-[url('assets/the-school.jpg')] bg-no-repeat bg-cover bg-center h-[20rem] sm:h-[30rem] md:h-[35rem] flex items-center justify-center">
-    <p class="animate-ping text-2xl sm:text-3xl md:text-4xl text-black font-bold text-center">ST. Paul's Anglican School</p>
+  <!-- HERO IMAGE   assets/the-school.jpg-->
+  <div class="bg-[url('/thesch2.jpg')] bg-no-repeat bg-cover bg-center h-[20rem] sm:h-[30rem] md:h-[35rem] flex items-center justify-center">
+    <div>
+    <div class="animate-ping text-2xl sm:text-3xl md:text-4xl text-white font-bold text-center">
+    LA ST. Paul's Anglican 1 JHS
+   </div>
+
+    <!-- join modal open button -->
+   <div *ngIf="isModalOpen" class=" bg-white h-[10rem] w-[30rem] relative top-[-11rem]">
+  <div class="registration-card">
+    <h2>Year Group Membership Registration</h2>
+
+
+      <!-- registration modal -->
+  <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)" novalidate>
+    <!-- First name -->
+    <label for="firstName">First name</label>
+    <input
+      id="firstName"
+      name="firstName"
+      required
+      minlength="2"
+      [(ngModel)]="model.firstName"
+      #firstNameCtrl="ngModel"
+      type="text"
+    />
+
+    <ng-container *ngIf="firstNameCtrl as fnc">
+      <div class="error" *ngIf="fnc.invalid && (fnc.dirty || fnc.touched || submitted)">
+        <small *ngIf="fnc.errors?.['required']">First name is required.</small>
+        <small *ngIf="fnc.errors?.['minlength']">Minimum 2 characters.</small>
+      </div>
+    </ng-container>
+
+    <!-- Last name -->
+    <label for="lastName">Last name</label>
+    <input
+      id="lastName"
+      name="lastName"
+      required
+      minlength="2"
+      [(ngModel)]="model.lastName"
+      #lastNameCtrl="ngModel"
+      type="text"
+    />
+
+    <ng-container *ngIf="lastNameCtrl as lnc">
+      <div class="error" *ngIf="lnc.invalid && (lnc.dirty || lnc.touched || submitted)">
+        <small *ngIf="lnc.errors?.['required']">Last name is required.</small>
+        <small *ngIf="lnc.errors?.['minlength']">Minimum 2 characters.</small>
+      </div>
+    </ng-container>
+
+    <!-- Email -->
+    <label for="email">Email</label>
+    <input
+      id="email"
+      name="email"
+      required
+      email
+      [(ngModel)]="model.email"
+      #emailCtrl="ngModel"
+      type="email"
+    />
+
+    <ng-container *ngIf="emailCtrl as emc">
+      <div class="error" *ngIf="emc.invalid && (emc.dirty || emc.touched || submitted)">
+        <small *ngIf="emc.errors?.['required']">Email is required.</small>
+        <small *ngIf="emc.errors?.['email']">Please enter a valid email.</small>
+      </div>
+    </ng-container>
+
+    <!-- Year group select -->
+    <label for="yearGroup">Year group</label>
+    <select id="yearGroup" name="yearGroup" required [(ngModel)]="model.yearGroup" #yearCtrl="ngModel">
+      <option value="">-- Select year group --</option>
+      <option *ngFor="let y of yearGroups" [value]="y">{{ y }}</option>
+    </select>
+
+    <ng-container *ngIf="yearCtrl as yrc">
+      <div class="error" *ngIf="yrc.invalid && (yrc.dirty || yrc.touched || submitted)">
+        <small *ngIf="yrc.errors?.['required']">Please pick a year group.</small>
+      </div>
+    </ng-container>
+
+    <!-- Interests (checkboxes) -->
+    <!-- <fieldset>
+      <legend>Interests (optional)</legend>
+      <label *ngFor="let i of possibleInterests">
+        <input
+  type="checkbox"
+  [checked]="isInterestChecked(i)"
+  (change)="toggleInterest(i, ($event.target && ($event.target as any).checked))"
+/>
+
+        {{ i }}
+      </label>
+    </fieldset> -->
+
+    <!-- Notes -->
+    <label for="notes">Notes (optional)</label>
+    <textarea id="notes" name="notes" [(ngModel)]="model.notes"></textarea>
+
+    <!-- Terms -->
+    <label class="terms">
+      <input type="checkbox" name="acceptTerms" required [(ngModel)]="model.acceptTerms" #termsCtrl="ngModel" />
+      I accept the terms and conditions.
+    </label>
+
+    <ng-container *ngIf="termsCtrl as tc">
+      <div class="error" *ngIf="tc.invalid && (tc.dirty || tc.touched || submitted)">
+        <small *ngIf="tc.errors?.['required']">You must accept the terms to continue.</small>
+      </div>
+    </ng-container>
+
+    <div class="form-actions flex justify-end">
+      <button (click)="cancel()" class="bg-gray-400 rounded-lg">Cancel</button>
+      <button type="submit" class="bg-green-600 text-white rounded-lg">Register</button>
+    </div>
+  </form>
+
+  <section *ngIf="submissionResult" class="confirmation">
+    <h3>Registration submitted</h3>
+    <p>
+      Thanks <strong>{{ submissionResult.firstName }}</strong> — we've recorded your
+      registration for <strong>{{ submissionResult.yearGroup }}</strong>.
+    </p>
+    <!-- <pre>{{ submissionResult | json }}</pre> -->
+  </section>
+</div>
+
+        <!-- <button (click)="cancel()" class="bg-gray-400 rounded-lg">Cancel</button> -->
+    </div>
   </div>
+  </div>
+
 
   <!-- MOTTO -->
   <div class="bg-green-800 py-10 flex flex-col items-center justify-center text-white text-center">
@@ -121,7 +254,7 @@
 
 
 
-
+  
 
 
 
