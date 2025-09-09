@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ScrollSlideDirective } from '../../animation/animation';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -28,6 +28,19 @@ scrollToContact() {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen; 
+  }
+
+
+
+
+   @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
+
+  ngAfterViewInit() {
+    const video = this.bgVideo.nativeElement;
+    video.muted = true; // required for autoplay
+    video.play().catch(err => {
+      console.log('Autoplay prevented:', err);
+    });
   }
 
 
