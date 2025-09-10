@@ -1,7 +1,7 @@
 
 <div class="overflow-hidden">
     <!-- EMAIL -->
-    <div class="bg-red-600 py-1 text-white">
+    <div class="bg-gradient-to-b from-purple-200 via-purple-400 to-purple-700 py-1 text-white fixed top-0 left-0 w-full z-50">
     <div class="flex mx-20">
      <span class="material-symbols-outlined ">mail</span>
      <span class="tracking-tight font-bold text-sm">anglosa194&#64;yahoo.com.gh</span>
@@ -9,10 +9,9 @@
     </div>
 
   <!-- NAVBAR -->
-  <div class="bg- blue-800 h-16 md:h-20 z-10 flex items-center px-4 md:px-20">
+  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-purple-400 top-0 left-0 w-full mt-8">
     <div class="flex justify-between items-center w-full text- red-500">
       
-
        <!-- SCHOOL LOGO -->
         <div class="flex gap-2">
             <img src="/schlogo1.png" class="w-10">
@@ -23,32 +22,32 @@
       <div class="hidden md:flex gap-4">
         <a routerLink="/homepage"
           routerLinkActive="bg-[#F3F3F16E] border border-white"
-          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          class="text-black font-bold border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
           Home Page
         </a>
         <a routerLink="/aboutlayout"
           routerLinkActive="bg-[#F3F3F16E] border border-white"
-          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          class="text-black font-bold border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
           About Us
         </a>
         <a routerLink="/gallery"
           routerLinkActive="bg-[#F3F3F16E] border border-white"
-          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          class="text-black font-bold border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
           Gallery
         </a>
         <a routerLink="/constitution"
           routerLinkActive="bg-[#F3F3F16E] border border-white"
-          class="text-black border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
+          class="text-black font-bold border-transparent px-3 py-2 rounded-[11px] text-sm md:text-base">
           Constitution
         </a>
          <a routerLink="/location"
            routerLinkActive="bg-[#F3F3F16E] border border-white"
           [routerLinkActiveOptions]="{ exact: false }"
-          class="text-black border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
+          class="text-black font-bold border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
           >
           Location
         </a>
-        <a (click)="scrollToContact()" class="text-black cursor-pointer px-3 py-2 text-sm md:text-base">
+        <a (click)="scrollToContact()" class="text-black font-bold cursor-pointer px-3 py-2 text-sm md:text-base">
           Contact
         </a>
       </div>
@@ -61,7 +60,7 @@
   </div>
 
   <!-- HERO -->
-  <div class="bg-[url('/studentgroup.jpg')] bg-center bg-cover h-[25rem] sm:h-[24rem] md:h- [30rem] flex justify-center items-center">
+  <div class="bg-[url('/studentgroup.jpg')] bg-center bg-cover h-[25rem] sm:h-[24rem] md:h- [30rem] flex justify-center items-center mt-20">
     <div class="bg-black w-full h-full opacity-50">
       <!-- Back Button -->
       <div class="relative top-[-13rem] bg-white right-[14rem]">

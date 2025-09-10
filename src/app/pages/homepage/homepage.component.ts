@@ -37,7 +37,7 @@ scrollToContact() {
 
   ngAfterViewInit() {
     const video = this.bgVideo.nativeElement;
-    video.muted = true; // required for autoplay
+    video.muted = true; 
     video.play().catch(err => {
       console.log('Autoplay prevented:', err);
     });

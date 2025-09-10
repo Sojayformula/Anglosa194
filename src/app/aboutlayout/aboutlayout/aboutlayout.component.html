@@ -1,41 +1,32 @@
 
-<div class="bg-red-600 py-1 text-white">
-  <a href="mailto:aglosa194@gmail.com" 
-     class="flex justify-center md:justify-start px-4 md:px-20 items-center">
-    <span class="material-symbols-outlined">mail</span>
-    <span class="tracking-tight font-bold text-xs sm:text-sm ml-1">
-      anglosa194&#64;gmail.com
-    </span>
-  </a>
-
-  <!-- <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sojayformula4@gmail.com" target="_blank">
-  sojayformula4&#64;gmail.com
-</a> -->
-
-</div>
-
-
-<!-- NAVBAR -->
-<div class="bg- blue-800">
-  <div class="flex justify-between items-center px-4 md:px-20 h-16 md:h-20">
-    <!-- Logo -->
-    <div class="flex items-center gap-2">
-      <img src="/schlogo1.png" class="w-8 sm:w-10">
-      <div class="font-bold tracking-tight leading-tight text-black">
-      <p class="text-sm sm:text-base">Anglosa</p>
-        <p>194</p>
-        </div>
+<div class="overflow-hidden">
+    <!-- EMAIL -->
+    <div class="bg-gradient-to-b from-purple-200 via-purple-400 to-purple-700 py-1 text-white fixed top-0 left-0 w-full z-50">
+    <div class="flex mx-20">
+     <span class="material-symbols-outlined ">mail</span>
+     <span class="tracking-tight font-bold text-sm">anglosa194&#64;yahoo.com.gh</span>
+     </div>
     </div>
+
+  <!-- NAVBAR -->
+  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-purple-400 top-0 left-0 w-full mt-8">
+    <div class="flex justify-between items-center w-full text- red-500">
+      
+       <!-- SCHOOL LOGO -->
+        <div class="flex gap-2">
+            <img src="/schlogo1.png" class="w-10">
+            <p class="w-2 tracking-tight leading-tight font-bold mt-2">Anglosa 194</p>
+        </div>
 
     <!-- Links -->
     <div class="hidden md:flex gap-4">
       <a routerLink="/homepage" routerLinkActive="bg-[#F3F3F16E] border border-white"
-        class="text-black px-3 py-2 rounded-md text-sm md:text-base">Home Page</a>
-      <a routerLink="/aboutlayout" class="text-black px-3 py-2 text-sm md:text-base">About Us</a>
-      <a routerLink="/gallery" class="text-black px-3 py-2 text-sm md:text-base">Gallery</a>
-      <a routerLink="/constitution" class="text-black px-3 py-2 text-sm md:text-base">Constitution</a>
-      <a routerLink="/location" class="text-black px-3 py-2 text-sm md:text-base">Location</a>
-      <a (click)="scrollToContact()" class="text-black cursor-pointer px-3 py-2 text-sm md:text-base">Contact</a>
+        class="text-black font-bold px-3 py-2 rounded-md text-sm md:text-base">Home Page</a>
+      <a routerLink="/aboutlayout" class="text-black font-bold px-3 py-2 text-sm md:text-base">About Us</a>
+      <a routerLink="/gallery" class="text-black font-bold px-3 py-2 text-sm md:text-base">Gallery</a>
+      <a routerLink="/constitution" class="text-black font-bold px-3 py-2 text-sm md:text-base">Constitution</a>
+      <a routerLink="/location" class="text-black font-bold px-3 py-2 text-sm md:text-base">Location</a>
+      <a (click)="scrollToContact()" class="text-black font-bold cursor-pointer px-3 py-2 text-sm md:text-base">Contact</a>
     </div>
 
     <!-- Join button -->
@@ -47,26 +38,28 @@
 </div>
 
 <!-- HERO SECTION -->
-<div class="bg-[url('/grouppic.jpg')] bg-no-repeat bg-center bg-cover h-[20rem] sm:h-[25rem] flex justify-center items-center">
+<div class="bg-[url('/grouppic.jpg')] bg-no-repeat bg-center bg-cover h-[20rem] sm:h-[25rem] flex justify-center items-center mt-32">
   <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 text-center font-bold">
     <a routerLink="/the-school">
-      <img src="schlogo1.png"
-        class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-red-500 shadow-2xl animate-bounce hover:animate-none">
-      <p class="text-red-800 text-base sm:text-lg mt-2 animate-bounce">The School</p>
+     <div class="flex justify-center items-center   bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-red-500 shadow-2xl animate-bounce hover:animate-none">
+      <img src="schlogo1.png" class="w-12">
+    </div> 
+      <p class="text-white bg-black font-extrabold text-base sm:text-lg mt-2 animate-bounce">The School</p>
     </a>
     <a routerLink="/year-group">
-      <img src="multipleusers2.png"
-        class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-yellow-500 shadow-2xl animate-sideToSide hover:animate-none">
-      <p class="text-red-800 text-base sm:text-lg mt-2 animate-bounce">Year Groups</p>
+      <div class="flex justify-center items-center bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-yellow-500 shadow-2xl animate-sideToSide hover:animate-none">
+       <img src="helpinghand.png" class="w-12">
+     </div>
+      <p class="text-white bg-black font-extrabold text-base sm:text-lg mt-2 animate-bounce">Year Groups</p>
     </a>
-    <button (click)="volunteer()">
+    <a routerLink="/members">
       <img src="morterboard2.png"
         class="bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-green-500 shadow-2xl animate-bounce hover:animate-none relative left-10">
-      <p class="text-red-800 text-base sm:text-lg mt-2 animate-bounce relative left-10">Volunteer</p>
-    </button>
+      <p class="text-white bg-black font-extrabold text-base sm:text-lg mt-2 animate-bounce relative left-10">Members</p>
+    </a>
   </div>
 </div>
-
+<!-- multipleusers2 -->
 <!-- STATS SECTION -->
 <div class="bg-gradient-to-b from-purple-500 via-purple-800 to-purple-900 px-4">
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center text-white">
@@ -97,7 +90,7 @@
   </div>
 </div>
 
-<!-- PRINCIPAL MESSAGE -->
+<!-- chairman's MESSAGE -->
 <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mt-6 mb-4 mx-4 lg:mx-10 my- 10">
   <div class="border-2 shadow-xl p-4 lg:w-1/2">
     <p class="font-bold text-2xl sm:text-3xl mb-4">A Message From Our Chairman</p>

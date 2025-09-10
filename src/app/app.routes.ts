@@ -56,6 +56,7 @@ import { NgModule } from '@angular/core';
 import { Objective3Component } from './aboutlayout/objectives/objective3/objective3.component';
 import { Objective2Component } from './aboutlayout/objectives/objective2/objective2.component';
 import { LocationComponent } from './pages/location/location.component';
+import { MembersComponent } from './aboutlayout/members/members.component';
 
 
 export const routes: Routes = [
@@ -127,6 +128,7 @@ export const routes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   { path: 'constitution', component: ConstitutionComponent },
   { path: 'the-school', component: TheSchoolComponent },
+  { path: 'members', component: MembersComponent },
   { path: 'location', component: LocationComponent },
 
   {
