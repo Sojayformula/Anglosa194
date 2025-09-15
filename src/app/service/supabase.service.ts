@@ -11,35 +11,86 @@ export class SupabaseService {
 
   constructor() { 
       this.supabase = createClient(
-      'https://zqgpkgitbtxbxkjvjaez.supabase.co',   // replace
+      'https://zqgpkgitbtxbxkjvjaez.supabase.co',  
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxZ3BrZ2l0YnR4YnhranZqYWV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0MjM2NjYsImV4cCI6MjA3Mjk5OTY2Nn0.6JvKyoMU9FbW0ueLwQ3oC7lqD1lcNZikAzV6uVYu9Ds' // replace
     );
   }
 
 
+
+// CONTENTS // 
   async getContents() {
-  const { data, error } = await this.supabase
-    .from('contents')
-    .select('*');
-  if (error) throw error;
-  return data;
-}
+    const { data, error } = await this.supabase
+      .from('contents')
+      .select('*');
+    if (error) throw error;
+    return data;
+  }
 
-async addContent(content: { name: string; description: string }) {
-  const { data, error } = await this.supabase
-    .from('contents')
-    .insert([content]);
-  if (error) throw error;
-  return data;
-}
+  async addContent(content: { name: string; description: string }) {
+    const { data, error } = await this.supabase
+      .from('contents')
+      .insert([content]);
+    if (error) throw error;
+    return data;
+  }
 
+  async deleteContent(id: number) {
+    const { error } = await this.supabase
+      .from('contents')
+      .delete()
+      .eq('id', id);
+    return { error };
+  }
 
-// supabase.service.ts
-async deleteContent(id: number) {
-  const { error } = await this.supabase.from('contents').delete().eq('id', id);
-  return { error };
-}
+  // TEACHERS // 
+  async getteachContents() {
+    const { data, error } = await this.supabase
+      .from('teachers')
+      .select('*');
+    if (error) throw error;
+    return data;
+  }
 
+  async addteachContent(content: { name: string; description: string }) {
+    const { data, error } = await this.supabase
+      .from('teachers')
+      .insert([content]);
+    if (error) throw error;
+    return data;
+  }
 
+  async deleteTeacher(id: number) {
+    const { error } = await this.supabase
+      .from('teachers')
+      .delete()
+      .eq('id', id);
+    return { error };
+  }
+
+  // ADMI //
+  async getAdmi() {
+    const { data, error } = await this.supabase
+      .from('admi')
+      .select('*');
+    if (error) throw error;
+    return data;
+  }
+
+  async addAdmi(admin: { name: string; role: string }) {
+    const { data, error } = await this.supabase
+      .from('admi')
+      .insert([admin]);
+    if (error) throw error;
+    return data;
+  }
+
+  async deleteAdmi(id: number) {
+    const { error } = await this.supabase
+      .from('admi')
+      .delete()
+      .eq('id', id);
+    return { error };
+  }
 
 }

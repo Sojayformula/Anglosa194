@@ -11,7 +11,14 @@ import { Router, RouterModule } from '@angular/router'
 })
 export class AboutlayoutComponent implements OnInit{
 
-  constructor(private router: Router, private el: ElementRef) {}
+   isBaseRoute = false;
+
+  constructor(private router: Router, private el: ElementRef) {
+
+     this.router.events.subscribe(() => {
+      this.isBaseRoute = this.router.url === '/aboutlayout';
+    });
+  }
 
   ngOnInit() {
     

@@ -1,0 +1,88 @@
+ <div>
+
+       <!-- EMAIL
+    <div class="bg-gradient-to-b from-purple-200 via-purple-400 to-purple-700 py-1 text-white fixed top-0 left-0 w-full z-50">
+    <div class="flex mx-20">
+     <span class="material-symbols-outlined ">mail</span>
+     <span class="tracking-tight font-bold text-sm">anglosa194&#64;yahoo.com.gh</span>
+     </div>
+    </div>
+
+  NAVBAR
+  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-purple-400 top-0 left-0 w-full mt-8">
+    <div class="flex justify-between items-center w-full text- red-500">
+      
+       SCHOOL LOGO
+        <div class="flex gap-2">
+            <img src="/schlogo1.png" class="w-10">
+            <p class="w-2 tracking-tight leading-tight font-bold mt-2 text-white">Anglosa 194</p>
+        </div>
+
+    Links
+    <div class="hidden md:flex gap-4">
+      <a routerLink="/homepage" routerLinkActive="bg-black [#F3F3F16E] border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+        class="text-white font-bold px-3 py-2 rounded-md text-sm md:text-base hover:!border hover:!border-white  hover:bg-[#F3F3F16E] hover:text-black transition-colors duration-200 hover:!rounded-lg">
+        Home Page</a>
+      <a routerLink="/aboutlayout" routerLinkActive="bg-[#F3F3F16E] border border-white !text-black   hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg" 
+        class="text-white px-3 py-1 rounded-md text-sm sm:text-base  !hover:bg-[#F3F3F16E] !hover:text-black transition-colors duration-200 ">
+        About Us</a>
+      <a routerLink="/gallery" routerLinkActive="bg-black [#F3F3F16E]  border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg" 
+        class="text-white font-bold px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-[#F3F3F16E] hover:text-black transition-colors duration-200 hover:!rounded-lg">
+        Gallery</a>
+      <a routerLink="/constitution" routerLinkActive="bg-black [#F3F3F16E] border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+        class="text-white font-bold px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-[#F3F3F16E] hover:text-black transition-colors duration-200 hover:!rounded-lg">
+        Constitution</a>
+      <a routerLink="/location" routerLinkActive="bg-black [#F3F3F16E] border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+        class="text-white font-bold px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-[#F3F3F16E] hover:text-black transition-colors duration-200 hover:!rounded-lg">
+        Location</a>
+      <a (click)="scrollToContact()" routerLinkActive="bg-black [#F3F3F16E] border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+        class="text-white font-bold cursor-pointer px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:!bg-[#F3F3F16E] hover:text-black transition-colors duration-200 hover:!rounded-lg">
+        Contact</a>
+    </div>
+
+    Join button
+    <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">Join</button>
+
+    Mobile menu button
+    <button class="md:hidden text-white text-2xl">☰</button>
+  </div>
+</div> -->
+
+
+
+    
+    <div class="mx-12 mt-10">
+        <p class="text-lg tracking-[0.4rem] font-bold text-gray-400">Teachers</p>
+    </div>
+
+<div class="lg:mt-10 mt-[rem] md:mx-10 mb-20">
+  <div class="overflow-x-auto mt- 32 ">
+    <table class="min-w-full table-auto text-[#353535]" id="Data">
+      <thead class="bg-gray-300 text-left">
+        <tr>
+          <th class="px-4 py-2">Unit ID</th>
+          <th class="px-4 py-2">Full Name</th>
+          <th class="px-4 py-2">Gender</th>
+          <th class="px-4 py-2">Subject</th>
+          <th class="px-4 py-2">Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="border-b border-gray-200 "
+          *ngFor="let item of teachAPIData; let i = index"
+        >
+          <td class="px-4 py-2">#{{ item.id }}</td>
+          <td class="px-4 py-2">{{ item.teachname }}</td>
+          <td class="px-4 py-2">{{ item.teachgender }}</td>
+          <td class="px-4 py-2">{{ item.teachsubject }}</td>
+           <td class="px-4 py-2">{{ item.teachposition }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+</div>
