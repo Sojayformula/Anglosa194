@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pages-layout',
-  imports: [RouterOutlet, CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './pages-layout.component.html',
   styleUrl: './pages-layout.component.scss'
 })

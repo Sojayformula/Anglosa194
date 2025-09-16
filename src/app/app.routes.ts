@@ -26,13 +26,18 @@ export const routes: Routes = [
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
 
   { path: 'homepage', component: HomepageComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'constitution', component: ConstitutionComponent },
-  { path: 'location', component: LocationComponent },
+
+  { path: "", component: PagesLayoutComponent,
+    children: [
+      {  path: "", redirectTo: "pages-layout", pathMatch: "full"},
+      { path: 'gallery', component: GalleryComponent },
+      { path: 'constitution', component: ConstitutionComponent },
+      { path: 'location', component: LocationComponent },
+]
+  },
    { path: "aboutlayout", component: AboutlayoutComponent,
     children: [
        { path: "", redirectTo: "aboutlayout", pathMatch: "full"},
-      //  { path: "aboutus", component: AboutusComponent },
        { path: 'the-school', component: TheSchoolComponent },
        { path: 'table-layout', component: TableLayoutComponent,
     children: [
@@ -51,29 +56,8 @@ export const routes: Routes = [
       { path: 'objective3', component: Objective3Component },
     ],
   },
-
-  // { path: "", component: PagesLayoutComponent,   
-  //   children: [
-  // { path: "", redirectTo: "aboutlayout", pathMatch: "full"},
-  // { path: 'aboutlayout', component: AboutlayoutComponent  AboutusComponent},
-  // { path: 'the-school', component: TheSchoolComponent }, 
- 
-  // ]
-  // },
 ]
 },
- 
-
-  
-  //   { path: 'year-group',
-  //   component: YearGroupComponent,
-  //   children: [
-  //     { path: '', redirectTo: 'objective1', pathMatch: 'full' },  
-  //     { path: 'objective1', component: Objective1Component },
-  //     { path: 'objective2', component: Objective2Component },
-  //     { path: 'objective3', component: Objective3Component },
-  //   ],
-  // },
 
   //  { path: '**', redirectTo: 'homepage' }
 ];

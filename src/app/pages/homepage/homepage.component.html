@@ -26,22 +26,22 @@
     <!-- Desktop Nav links -->
     <div class="hidden md:flex gap-3 lg:gap-6">
       <a routerLink="/homepage"
-         routerLinkActive="bg-[#F3F3F16E] border border-white"
-         class="text-white px-3 py-1 rounded-md text-sm sm:text-base">Home</a>
+         routerLinkActive="bg-[#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+         class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E] transition-colors duration-200">Home</a>
       <a routerLink="/aboutlayout"
-         routerLinkActive="bg-black [#F3F3F16E] border border-white text-black"
-         class="text-white px-3 py-1 rounded-md text-sm sm:text-base">About</a>
+         routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+         class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E]  transition-colors duration-200">About Us</a>
       <a routerLink="/gallery"
-         routerLinkActive="bg-[#F3F3F16E] border border-white"
-         class="text-white px-3 py-1 rounded-md text-sm sm:text-base">Gallery</a>
+         routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+         class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E]  transition-colors duration-200">Gallery</a>
       <a routerLink="/constitution"
-         routerLinkActive="bg-[#F3F3F16E] border border-white"
-         class="text-white px-3 py-1 rounded-md text-sm sm:text-base">Constitution</a>
+         routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+         class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E] transition-colors duration-200">Constitution</a>
       <a routerLink="/location"
-         routerLinkActive="bg-[#F3F3F16E] border border-white"
-         class="text-white px-3 py-1 rounded-md text-sm sm:text-base">Location</a>
+         routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+         class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E] transition-colors duration-200">Location</a>
       <a (click)="scrollToContact()"
-         class="text-white px-3 py-1 rounded-md text-sm sm:text-base cursor-pointer">Contact</a>
+         class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E] transition-colors duration-200 cursor-pointer">Contact</a>
     </div>
 
     <!-- Join Button (hidden on very small screens) -->
@@ -94,9 +94,7 @@
   <div class="flex flex-col lg:flex-row gap-10 justify-center mx-4 lg:mx-20 my-16">
     <div class="flex-1 text-center border-2 rounded-lg shadow-lg p-6"  appScrollSlide [from]="'left'" [threshold]="0.2">
       <p class="font-bold text-2xl sm:text-3xl md:text-[35px]">
-        <span class="text-yellow-400">La Anglican <span class="text-black">1 JHS</span></span>
-        <span class="text-purple-500"> Year Group</span><br />
-        <span class="text-green-600">Association</span>
+        La Anglican 1 JHS Year Group Association
       </p>
       <p class="mt-4 text-sm sm:text-base">
        The Anglican 1 JHS Year Group Association (Anglosa 194) is an association
@@ -111,9 +109,7 @@
 
     <div class="flex-1 text-center border-2 rounded-lg shadow-lg p-6" appScrollSlide [from]="'right'" [threshold]="0.2">
       <p class="font-bold text-2xl sm:text-3xl md:text-[35px]">
-        <span class="text-green-600">La Anglican <span class="text-black">1 JHS</span></span>
-        <span class="text-purple-500"> Year Group</span><br />
-        <span class="text-yellow-400">Website</span>
+        La Anglican 1 JHS Year Group Website
       </p>
       <p class="mt-4 text-sm sm:text-base">
         We are delighted to launch the Anglosa 1 JHS  official website as a safe space for our Old
