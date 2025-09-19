@@ -19,7 +19,7 @@
         </div>
 
     <!-- Links -->
-    <div class="hidden md:flex gap-4">
+    <div class="hidden md:flex gap-4 z-50">
       <a routerLink="/homepage" routerLinkActive="bg-gray-300 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 rounded-lg text-sm md:text-base !hover:bg-gray-100 hover:!border hover:!border-white  hover:bg-gray-300 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Home Page</a>
@@ -41,19 +41,45 @@
     </div>
 
     <!-- Join button -->
-    <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
+    <button class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
       Join
     </button>
 
     <!-- Mobile menu button -->
-    <button class="md:hidden text-white text-2xl">☰</button>
+    <button (click)="toggleMenu()" class="md:hidden text-white text-2xl">
+      ☰
+    </button>
   </div>
+  <!-- </div> -->
+  
+
+<!-- Mobile Dropdown -->
+<div *ngIf="isMenuOpen" 
+     class="md:hidden absolute right-0 mt-[20rem] bg-black w-[12rem] flex items-center flex-col mx-2 px-4 py-4 pb-4 space-y-2 z-40">
+  <a routerLink="/homepage" (click)="toggleMenu()" class="block text-white">Home</a>
+  <a routerLink="/aboutlayout" (click)="toggleMenu()" class="block text-white">About</a>
+  <a routerLink="/gallery" (click)="toggleMenu()" class="block text-white">Gallery</a>
+  <a routerLink="/constitution" (click)="toggleMenu()" class="block text-white">Constitution</a>
+  <a routerLink="/location" (click)="toggleMenu()" class="block text-white">Location</a>
+  <a (click)="scrollToContact(); toggleMenu()" class="block text-white cursor-pointer">Contact</a>
+
+   <button class="w- full bg-red-500 text-white font-semibold px-4 py-2 rounded-lg">
+      Join 
+    </button>
 </div>
+
+
+
+</div>
+
+
+
+
 
   <!-- HERO SECTION -->
    <div *ngIf="isBaseRoute">
-<div class="bg-[url('/grouppic.jpg')] bg-no-repeat bg-center bg-cover h-[20rem] sm:h-[25rem] flex justify-center items-center mt-32">
-  <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 text-center font-bold">
+<div class="bg-[url('/grouppic.jpg')] bg-no-repeat bg-center bg-cover h-[20rem] sm:h-[25rem] flex justify-center items-center mt-28">
+  <div class="hidden md:flex flex-col sm:flex-row gap-6 sm:gap-10 text-center font-bold">
     <a routerLink="the-school">
      <div class="flex justify-center items-center   bg-black rounded-xl w-32 sm:w-40 h-24 sm:h-32 mx-auto shadow-red-500 shadow-2xl animate-bounce hover:animate-none">
       <img src="schlogo1.png" class="w-12">
@@ -73,6 +99,28 @@
       <p class="text-white bg-black font-extrabold text-base sm:text-lg mt-2 animate-bounce relative left-10">Members</p>
     </a>
   </div>
+
+  <div class="md:hidden flex gap-10 text-center">
+    <a routerLink="the-school">
+     <div class="flex justify-center items-center rounded-xl w-20 32 mx-auto shadow-red-500 shadow-2xl animate- bounce hover:animate-none">
+      <img src="schlogo1.png" class="w-10">
+    </div> 
+      <p class="text-white bg-black font-semibold text-base mt-7 animate-bounce">The School</p>
+    </a>
+    <a routerLink="year-group">
+      <div class="flex justify-center items-center rounded-xl w-20 h-20 mx-auto shadow-yellow-500 shadow-2xl animate- sideToSide hover:animate-none">
+       <img src="helpinghand.png" class="w-12">
+     </div>
+      <p class="text-white bg-black font-semibold text-sm lg mt-2 animate-bounce">Year Groups</p>
+    </a>
+    <a routerLink="table-layout">
+      <div class="flex justify-center items-center rounded-xl w-20 32 sm:w-40 h-20 24 sm:h-32 mx-auto shadow-green-500 shadow-2xl animate- bounce hover:animate-none relative left- 10">
+       <img src="morterboard2.png" class="w-32">
+      </div>
+      <p class="text-white bg-black font-semibold text-base mt-2 animate-bounce relative left-">Members</p>
+    </a>
+  </div>
+
 </div>
 
 <!-- STATS SECTION -->

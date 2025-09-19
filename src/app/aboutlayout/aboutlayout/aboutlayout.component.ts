@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router'
 export class AboutlayoutComponent implements OnInit{
 
    isBaseRoute = false;
+   isMenuOpen: boolean = false; 
 
   constructor(private router: Router, private el: ElementRef) {
 
@@ -35,6 +36,10 @@ export class AboutlayoutComponent implements OnInit{
     volunteer(){
     this.router.navigate(['/volunteers'])
   } 
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen; 
+  }
 
      // navigate to footer //
 scrollToContact() {

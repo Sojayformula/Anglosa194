@@ -10,9 +10,15 @@ import { RouterModule } from '@angular/router';
 })
 export class PagesLayoutComponent {
 
+  isMenuOpen = false
+
   // navigate to footer //
 scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+toggleMenu(){
+  this.isMenuOpen = !this.isMenuOpen
 }
 
 

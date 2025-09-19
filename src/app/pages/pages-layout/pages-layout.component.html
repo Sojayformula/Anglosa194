@@ -1,58 +1,5 @@
 <div class="">
 
-
-    <!-- <div class=" bg- blue-800 h-20 z-10">
-       <div class="text-red-500 flex justify-between mx-20 relative top-6 ">
-        <div>LOGO</div>
-        <div class="flex gap-4 ">
-         <a routerLink="homepage" 
-          routerLinkActive="bg-[#F3F3F16E] border border-white"
-          [routerLinkActiveOptions]="{ exact: false }"
-          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
-         >
-         Home Page
-        </a>
-         <a routerLink="aboutus"
-          routerLinkActive="bg-[#F3F3F16E] border border-white"
-          [routerLinkActiveOptions]="{ exact: false }"
-          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
-         >
-         About Us
-        </a>
-
-        <a routerLink="gallery"
-           routerLinkActive="bg-[#F3F3F16E] border border-white"
-          [routerLinkActiveOptions]="{ exact: false }"
-          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
-          >
-          Gallery
-        </a>
-
-          <a routerLink="constitution"
-           routerLinkActive="bg-[#F3F3F16E] border border-white"
-          [routerLinkActiveOptions]="{ exact: false }"
-          class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base"
-          >
-          Constitution
-        </a>
-
-        <a (click)="scrollToContact()"
-         class="text-white border-transparent w-[80px] sm:w-[96px] h-[34px] sm:h-[38px] flex items-center justify-center rounded-[11px] text-sm sm:text-base cursor-pointer"
-         >
-            Contact
-        </a>
-
-         </div>
-
-         <button class="flex justify-center items-center bg-red-500 text-white font-semibold w-20 h-8 rounded-lg border">
-            Join
-         </button>
-       </div>
-    </div>
-</div> -->
-
-
-
   <!-- EMAIL -->
     <div class="bg-gradient-to-b from-purple-200 via-purple-400 to-purple-700 py-1 text-white fixed top-0 left-0 w-full z-50">
     <div class="flex mx-20">
@@ -151,8 +98,25 @@
     </button>
 
     <!-- Mobile menu button -->
-    <button class="md:hidden text-white text-2xl">☰</button>
+    <button (click)="toggleMenu()" class="md:hidden text-white text-2xl">☰</button>
   </div>
+
+  <!-- Mobile Dropdown -->
+<div *ngIf="isMenuOpen" 
+     class="md:hidden absolute right-0 mt-[20rem] bg-black w-[12rem] flex items-center flex-col mx-2 px-4 py-4 pb-4 space-y-2 z-40">
+  <a routerLink="/homepage" (click)="toggleMenu()" class="block text-white">Home</a>
+  <a routerLink="/aboutlayout" (click)="toggleMenu()" class="block text-white">About</a>
+  <a routerLink="/gallery" (click)="toggleMenu()" class="block text-white">Gallery</a>
+  <a routerLink="/constitution" (click)="toggleMenu()" class="block text-white">Constitution</a>
+  <a routerLink="/location" (click)="toggleMenu()" class="block text-white">Location</a>
+  <a (click)="scrollToContact(); toggleMenu()" class="block text-white cursor-pointer">Contact</a>
+
+   <button class="w- full bg-red-500 text-white font-semibold px-4 py-2 rounded-lg">
+      Join 
+    </button>
+</div>
+
+
 </div>
 
 

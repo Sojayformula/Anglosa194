@@ -55,8 +55,10 @@
     </button>
   </div>
 
+
   <!-- Mobile Dropdown Menu -->
-  <div *ngIf="isMenuOpen" class="md:hidden bg-blue-700 px- 4 w-[10rem] flex flex-col items-center pb-4 space-y-2">
+   <!-- <div class="flex justify-end">
+  <div *ngIf="isMenuOpen" class="md:hidden bg-black mt-[70px] blue-700 px- 4 w-[10rem] flex flex-col items-center pb-4 space-y-2">
     <a routerLink="/homepage" class="block text-white">Home</a>
     <a routerLink="/aboutlayout" class="block text-white">About</a>
     <a routerLink="/gallery" class="block text-white">Gallery</a>
@@ -67,6 +69,24 @@
       Join 
     </button>
   </div>
+  </div> -->
+
+  <!-- Mobile Dropdown Menu -->
+<div *ngIf="isMenuOpen"
+     class="md:hidden fixed top-[70px] right-0 bg-black w-[12rem] flex items-center flex-col px-4 py-4 pb-6 space-y-2 z-50 shadow-lg mx-2">
+
+  <a routerLink="/homepage" (click)="toggleMenu()" class="block text-white">Home</a>
+  <a routerLink="/aboutlayout" (click)="toggleMenu()" class="block text-white">About</a>
+  <a routerLink="/gallery" (click)="toggleMenu()" class="block text-white">Gallery</a>
+  <a routerLink="/constitution" (click)="toggleMenu()" class="block text-white">Constitution</a>
+  <a routerLink="/location" (click)="toggleMenu()" class="block text-white">Location</a>
+  <a (click)="scrollToContact(); toggleMenu()" class="block text-white cursor-pointer">Contact</a>
+
+  <button class="w- full bg-red-500 text-white font-semibold px-4 py-2 rounded-lg">
+    Join 
+  </button>
+</div>
+
 
 </div>
 
