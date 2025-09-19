@@ -25,7 +25,7 @@ export const routes: Routes = [
 
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
 
-  { path: 'homepage', component: HomepageComponent },
+   { path: 'homepage', component: HomepageComponent },
 
   { path: "", component: PagesLayoutComponent,
     children: [
