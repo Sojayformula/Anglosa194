@@ -12,9 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TeachersComponent {
 
-      // contents: any[] = [];
       teachers: any[] = [];
-      // APIData: any[] = [];
       teachAPIData: any[] = [];
   
     constructor(private supabaseService: SupabaseService) {}
