@@ -17,8 +17,44 @@ export class SupabaseService {
   }
 
 
+//   async signIn(email: string, password: string) {
+//   const { data, error } = await this.supabase.auth.signInWithPassword({
+//     email,
+//     password,
+//   });
 
-// // CONTENTS // 
+//   if (error) throw error;
+
+//   const user = data.user;
+
+//   // fetch role from teachers table (or admi table if that’s where roles live)
+//   const { data: roleData, error: roleError } = await this.supabase
+//     .from('teachers') // or 'admi'
+//     .select('role')
+//     .eq('user_id', user.id)
+//     .single();
+
+//   if (roleError) throw roleError;
+
+//   return {
+//     user,
+//     role: roleData?.role || 'teacher', // fallback
+//   };
+// }
+
+//   async signOut() {
+//     await this.supabase.auth.signOut();
+//   }
+
+//   async getCurrentUser() {
+//     const { data, error } = await this.supabase.auth.getUser();
+//     if (error) throw error;
+//     return data.user;
+//   }
+
+//   // =============================
+//   // CONTENTS TABLE
+//   // =============================
 //   async getContents() {
 //     const { data, error } = await this.supabase
 //       .from('contents')
@@ -35,6 +71,15 @@ export class SupabaseService {
 //     return data;
 //   }
 
+//   async updateContent(id: number, updates: any) {
+//     const { data, error } = await this.supabase
+//       .from('contents')
+//       .update(updates)
+//       .eq('id', id);
+//     if (error) throw error;
+//     return data;
+//   }
+
 //   async deleteContent(id: number) {
 //     const { error } = await this.supabase
 //       .from('contents')
@@ -43,7 +88,9 @@ export class SupabaseService {
 //     return { error };
 //   }
 
-//   // TEACHERS // 
+//   // =============================
+//   // TEACHERS TABLE
+//   // =============================
 //   async getteachContents() {
 //     const { data, error } = await this.supabase
 //       .from('teachers')
@@ -52,10 +99,25 @@ export class SupabaseService {
 //     return data;
 //   }
 
-//   async addteachContent(content: { name: string; description: string }) {
+//   async addteachContent(teacher: {
+//     teachname: string;
+//     teachgender: string;
+//     teachposition: string;
+//     email?: string;
+//     role?: string;
+//   }) {
 //     const { data, error } = await this.supabase
 //       .from('teachers')
-//       .insert([content]);
+//       .insert([teacher]);
+//     if (error) throw error;
+//     return data;
+//   }
+
+//   async updateTeacher(id: number, updates: any) {
+//     const { data, error } = await this.supabase
+//       .from('teachers')
+//       .update(updates)
+//       .eq('id', id);
 //     if (error) throw error;
 //     return data;
 //   }
@@ -68,150 +130,170 @@ export class SupabaseService {
 //     return { error };
 //   }
 
-//   // ADMI //
-//   async getAdmi() {
+//   // ✅ Extra helper: get teacher by email (to check role)
+//   async getTeacherByEmail(email: string) {
 //     const { data, error } = await this.supabase
-//       .from('admi')
-//       .select('*');
+//       .from('teachers')
+//       .select('id, teachname, role')
+//       .eq('email', email)
+//       .single();
 //     if (error) throw error;
 //     return data;
 //   }
 
-//   async addAdmi(admin: { name: string; role: string }) {
-//     const { data, error } = await this.supabase
-//       .from('admi')
-//       .insert([admin]);
-//     if (error) throw error;
-//     return data;
-//   }
+// =============================
+// AUTH
+// =============================
+async signIn(email: string, password: string) {
+  const { data, error } = await this.supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-//   async deleteAdmi(id: number) {
-//     const { error } = await this.supabase
-//       .from('admi')
-//       .delete()
-//       .eq('id', id);
-//     return { error };
-//   }
+  if (error) throw error;
+
+  const user = data.user;
+
+  if (!user) throw new Error('No user found');
+
+  // fetch role from teachers table (or 'admi' if you store roles there)
+  const { data: roleData, error: roleError } = await this.supabase
+    .from('teachers') // replace with 'admi' if needed
+    .select('role')
+    .eq('user_id', user.id)
+    .single();
+
+  if (roleError) throw roleError;
+
+  return {
+    user,
+    role: roleData?.role ?? 'teacher', // fallback if role not set
+  };
+}
+
+async signOut() {
+  await this.supabase.auth.signOut();
+}
+
+async getCurrentUser() {
+  const { data, error } = await this.supabase.auth.getUser();
+  if (error) throw error;
+  return data.user;
+}
+
+// =============================
+// CONTENTS TABLE
+// =============================
+// async getContents() {
+//   const { data, error } = await this.supabase
+//     .from('contents')
+//     .select('*');
+
+//   if (error) throw error;
+
+//   // Add a rowNumber property for clean numbering in Angular
+//   return data?.map((row, index) => ({
+//     ...row,
+//     rowNumber: index + 1, // starts from 1
+//   })) ?? [];
+// }
+async getContents() {
+  const { data, error } = await this.supabase
+    .from('contents')
+    .select('*')
+    .order('id', { ascending: true }); // <--- ensure smallest IDs come first
+
+  if (error) throw error;
+
+  return data?.map((row, index) => ({
+    ...row,
+    rowNumber: index + 1, // now this will be 1, 2, 3…
+  })) ?? [];
+}
 
 
+async addContent(content: { name: string; description: string }) {
+  const { data, error } = await this.supabase
+    .from('contents')
+    .insert([content]);
+  if (error) throw error;
+  return data;
+}
 
+async updateContent(id: number, updates: any) {
+  const { data, error } = await this.supabase
+    .from('contents')
+    .update(updates)
+    .eq('id', id);
+  if (error) throw error;
+  return data;
+}
 
-  // constructor() { 
-  //   this.supabase = createClient(
-  //     'https://zqgpkgitbtxbxkjvjaez.supabase.co',  
-  //     'YOUR_ANON_KEY' // ⚠️ better to load from environment.ts
-  //   );
-  // }
+async deleteContent(id: number) {
+  const { error } = await this.supabase
+    .from('contents')
+    .delete()
+    .eq('id', id);
+  return { error };
+}
 
-  // =============================
-  // AUTH (login / logout)
-  // =============================
-  async signIn(email: string, password: string) {
-    const { data, error } = await this.supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    if (error) throw error;
-    return data;
-  }
+// =============================
+// TEACHERS TABLE
+// =============================
+async getteachContents() {
+  const { data, error } = await this.supabase
+    .from('teachers')
+    .select('*');
+  if (error) throw error;
 
-  async signOut() {
-    await this.supabase.auth.signOut();
-  }
+  // Optional: add rowNumber for Angular display
+  return data?.map((row, index) => ({
+    ...row,
+    rowNumber: index + 1,
+  })) ?? [];
+}
 
-  async getCurrentUser() {
-    const { data, error } = await this.supabase.auth.getUser();
-    if (error) throw error;
-    return data.user;
-  }
+async addteachContent(teacher: {
+  teachname: string;
+  teachgender: string;
+  teachposition: string;
+  email?: string;
+  role?: string;
+}) {
+  const { data, error } = await this.supabase
+    .from('teachers')
+    .insert([teacher]);
+  if (error) throw error;
+  return data;
+}
 
-  // =============================
-  // CONTENTS TABLE
-  // =============================
-  async getContents() {
-    const { data, error } = await this.supabase
-      .from('contents')
-      .select('*');
-    if (error) throw error;
-    return data;
-  }
+async updateTeacher(id: number, updates: any) {
+  const { data, error } = await this.supabase
+    .from('teachers')
+    .update(updates)
+    .eq('id', id);
+  if (error) throw error;
+  return data;
+}
 
-  async addContent(content: { name: string; description: string }) {
-    const { data, error } = await this.supabase
-      .from('contents')
-      .insert([content]);
-    if (error) throw error;
-    return data;
-  }
+async deleteTeacher(id: number) {
+  const { error } = await this.supabase
+    .from('teachers')
+    .delete()
+    .eq('id', id);
+  return { error };
+}
 
-  async updateContent(id: number, updates: any) {
-    const { data, error } = await this.supabase
-      .from('contents')
-      .update(updates)
-      .eq('id', id);
-    if (error) throw error;
-    return data;
-  }
+// ✅ Extra helper: get teacher by email (to check role)
+async getTeacherByEmail(email: string) {
+  const { data, error } = await this.supabase
+    .from('teachers')
+    .select('id, teachname, role')
+    .eq('email', email)
+    .single();
+  if (error) throw error;
+  return data;
+}
 
-  async deleteContent(id: number) {
-    const { error } = await this.supabase
-      .from('contents')
-      .delete()
-      .eq('id', id);
-    return { error };
-  }
-
-  // =============================
-  // TEACHERS TABLE
-  // =============================
-  async getteachContents() {
-    const { data, error } = await this.supabase
-      .from('teacher')
-      .select('*');
-    if (error) throw error;
-    return data;
-  }
-
-  async addteachContent(teacher: {
-    teachname: string;
-    teachgender: string;
-    teachposition: string;
-    email?: string;
-    role?: string;
-  }) {
-    const { data, error } = await this.supabase
-      .from('teacher')
-      .insert([teacher]);
-    if (error) throw error;
-    return data;
-  }
-
-  async updateTeacher(id: number, updates: any) {
-    const { data, error } = await this.supabase
-      .from('teacher')
-      .update(updates)
-      .eq('id', id);
-    if (error) throw error;
-    return data;
-  }
-
-  async deleteTeacher(id: number) {
-    const { error } = await this.supabase
-      .from('teacher')
-      .delete()
-      .eq('id', id);
-    return { error };
-  }
-
-  // ✅ Extra helper: get teacher by email (to check role)
-  async getTeacherByEmail(email: string) {
-    const { data, error } = await this.supabase
-      .from('teacher')
-      .select('id, teachname, role')
-      .eq('email', email)
-      .single();
-    if (error) throw error;
-    return data;
-  }
 
 }

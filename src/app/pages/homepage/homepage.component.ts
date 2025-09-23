@@ -18,6 +18,10 @@ export class HomepageComponent  {
   this.router.navigate(['/the-school'])
   }
 
+   admin(){
+  this.router.navigate(['/login'])
+  }
+
    // navigate to footer //
 scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
