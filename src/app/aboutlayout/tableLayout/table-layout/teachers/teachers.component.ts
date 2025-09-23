@@ -14,6 +14,7 @@ export class TeachersComponent {
 
       teachers: any[] = [];
       teachAPIData: any[] = [];
+      loadingTeachers = false;
   
     constructor(private supabaseService: SupabaseService) {}
   
@@ -32,17 +33,31 @@ export class TeachersComponent {
 
   
       async ngOnInit() {
+        await this.loadTeachers();
     // try {
     //   this.APIData = await this.supabaseService.getContents();
     // } catch (err) {
     //   console.error('Error fetching contents:', err);
     // }
   
+  //   try {
+  //     this.teachAPIData = await this.supabaseService.getteachContents();
+  //   } catch (err) {
+  //     console.error('Error fetching teachers:', err);
+  //   }
+   }
+    /** Load teachers from supabase */
+  private async loadTeachers() {
+    this.loadingTeachers = true;
     try {
       this.teachAPIData = await this.supabaseService.getteachContents();
     } catch (err) {
       console.error('Error fetching teachers:', err);
-    }
+    }finally {
+    this.loadingTeachers = false; // stop loader
   }
   
     }
+
+  }
+  

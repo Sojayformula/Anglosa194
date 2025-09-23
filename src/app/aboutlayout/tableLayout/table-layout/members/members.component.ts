@@ -17,6 +17,9 @@ export class MembersComponent {
     APIData: any[] = [];
     teachAPIData: any[] = [];
 
+    loadingMembers = false;
+    
+
   constructor(private supabaseService: SupabaseService) {}
 
        // navigate to footer //
@@ -30,41 +33,29 @@ export class MembersComponent {
         this.isMenuOpen = !this.isMenuOpen; 
       }
 
-      
-  // async ngOnInit() {
-    // this.contents = await this.supabaseService.getContents();
-
-
-    // try {
-    //   this.APIData = await this.supabaseService.getContents();
-    // } catch (err) {
-    //   console.error('Error fetching contents:', err);
-    // }
-
-
-    //   this.teachers = await this.supabaseService.getteachContents();
-
-
-    // try {
-    //   this.teachAPIData = await this.supabaseService.getteachContents();
-    // } catch (err) {
-    //   console.error('Error fetching contents:', err);
-    // }
     
 
     async ngOnInit() {
-  try {
-    this.APIData = await this.supabaseService.getContents();
-  } catch (err) {
-    console.error('Error fetching contents:', err);
+    await this.loadMembers();
+    // await this.loadTeachers();
+}
+
+
+
+ /** Load members from supabase */
+  private async loadMembers() {
+    this.loadingMembers = true; 
+    try {
+      this.APIData = await this.supabaseService.getContents();
+    } catch (err) {
+      console.error('Error fetching members:', err);
+    }finally {
+    this.loadingMembers = false; // stop loader
+  }
   }
 
-  try {
-    this.teachAPIData = await this.supabaseService.getteachContents();
-  } catch (err) {
-    console.error('Error fetching teachers:', err);
-  }
-}
+
+  // }
 
   }
 
