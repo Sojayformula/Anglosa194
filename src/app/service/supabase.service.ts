@@ -166,7 +166,7 @@ export class SupabaseService {
   // =============================
   async getteachContents() {
     const { data, error } = await this.supabase
-      .from('teachers')
+      .from('teacher')
       .select('*');
     if (error) throw error;
     return data;
@@ -180,7 +180,7 @@ export class SupabaseService {
     role?: string;
   }) {
     const { data, error } = await this.supabase
-      .from('teachers')
+      .from('teacher')
       .insert([teacher]);
     if (error) throw error;
     return data;
@@ -188,7 +188,7 @@ export class SupabaseService {
 
   async updateTeacher(id: number, updates: any) {
     const { data, error } = await this.supabase
-      .from('teachers')
+      .from('teacher')
       .update(updates)
       .eq('id', id);
     if (error) throw error;
@@ -197,7 +197,7 @@ export class SupabaseService {
 
   async deleteTeacher(id: number) {
     const { error } = await this.supabase
-      .from('teachers')
+      .from('teacher')
       .delete()
       .eq('id', id);
     return { error };
@@ -206,7 +206,7 @@ export class SupabaseService {
   // ✅ Extra helper: get teacher by email (to check role)
   async getTeacherByEmail(email: string) {
     const { data, error } = await this.supabase
-      .from('teachers')
+      .from('teacher')
       .select('id, teachname, role')
       .eq('email', email)
       .single();
