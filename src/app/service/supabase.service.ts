@@ -240,18 +240,32 @@ async deleteContent(id: number) {
 // =============================
 // TEACHERS TABLE
 // =============================
+// async getteachContents() {
+//   const { data, error } = await this.supabase
+//     .from('teachers')
+//     .select('*');
+//   if (error) throw error;
+
+//   // Optional: add rowNumber for Angular display
+//   return data?.map((row, index) => ({
+//     ...row,
+//     rowNumber: index + 1,
+//   })) ?? [];
+// }
 async getteachContents() {
   const { data, error } = await this.supabase
     .from('teachers')
-    .select('*');
+    .select('*')
+    .order('id', { ascending: true }); 
+
   if (error) throw error;
 
-  // Optional: add rowNumber for Angular display
   return data?.map((row, index) => ({
     ...row,
-    rowNumber: index + 1,
+    rowNumber: index + 1, // now this will be 1, 2, 3…
   })) ?? [];
 }
+
 
 async addteachContent(teacher: {
   teachname: string;
