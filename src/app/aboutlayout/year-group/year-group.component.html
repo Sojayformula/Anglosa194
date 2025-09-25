@@ -9,27 +9,54 @@
     </div>
 
   <!-- HERO -->
-  <div class="bg-[url('/studentgroup.jpg')] bg-center bg-cover h-[25rem] sm:h-[24rem] md:h- [30rem] flex justify-center items-center mt-20">
-    <div class="bg-black w-full h-full opacity-50">
-      <!-- Back Button -->
+  <!-- <div class="bg-[url('/studentgroup.jpg')] animate-marquee  bg-center bg-cover h-[25rem] sm:h-[24rem] md:h- [30rem] flex justify-center items-center mt-20">
+    <div class="bg-black w-full h-full bg-opacity-50">
+      Back Button
       <div class="relative top-[-13rem] bg-white right-[14rem]">
         <button (click)="back()" class="text-black flex gap-2 text-base md:text-lg">
           <img src="/back.png" class="w-5 md:w-6">Back
         </button>
       </div>
-    <p class="animate-marquee text-4xl sm:text-6xl md:text-9xl font-extrabold text-white text-center px-2 mt-18">
+    <p class="animate-marque text-4xl sm:text-6xl md:text-9xl font-extrabold text-black white text-center px-2 mt-18">
       Aglosa 194 year group
     </p>
   </div>
+  </div> -->
+
+  <div
+    class="relative h-[25rem] sm:h-[24rem] md:h-[20rem] mt-[7rem]
+    bg-[url('/boyssch.jpg')] bg-[length:110%_auto] animate-marqueeBg">
+
+
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
+
+    <!-- Back Button -->
+    <div class="absolute top-6 left-6 bg-white px-3 py-1 rounded-md shadow">
+      <button (click)="back()" class="text-black flex gap-2 text-base md:text-lg">
+        <img src="/back.png" class="w-5 md:w-6">Back
+      </button>
+    </div>
+
+    <!-- Static Text -->
+    <p class="text-4xl sm:text-6xl md:text-9xl font-extrabold text-white text-center">
+      Anglosa 194 Year Group
+    </p>
   </div>
+</div> 
+
+
+
+
 
   <!-- VISION & MISSION -->
-  <div class="bg-[#0396FF] bg-opacity-10 py-20    bg- [url('/studentgroup1.jpg')] bg-no- repeat bg-cover bg-center bg- gray-200">
+  <div class="bg-[#0396FF] bg-opacity-10 py-20 bg- [url('/studentgroup1.jpg')] bg-no- repeat bg-cover bg-center bg- gray-200">
     <div class="fle x flex-col md:flex-row ">
       
       <!-- Mission -->
       <!-- <div class="bg-black bg-opacity-70 text-white w-full flex flex-col justify-center items-center p-6 md:h-[28rem]"> -->
-        <p class="text-center text-2xl font-extrabold md:text-4xl mb-4 mt-20">OUR MISSION</p>
+        <p class="text-center text-2xl font-extrabold md:text-4xl mb-4 ">OUR MISSION</p>
         <p class="text-sm sm:text-base md:text-xl max -w-md text-center mx-20">
           To promote the noble ideals of St. Paul's Anglican 1 JSS, in line with the
           aspiration of the founders which is to promote education and honour those 
