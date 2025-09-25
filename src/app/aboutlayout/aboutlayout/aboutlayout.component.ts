@@ -50,4 +50,15 @@ scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 }
 
+  // isMenuOpen = false;
+  isAboutOpen = false;
+
+  // toggleMenu() {
+  //   this.isMenuOpen = !this.isMenuOpen;
+  // }
+
+  toggleAbout() {
+    this.isAboutOpen = !this.isAboutOpen;
+  }
+
 }
