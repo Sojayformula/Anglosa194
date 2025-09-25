@@ -19,13 +19,17 @@ import { LocationComponent } from './pages/location/location.component';
 import { MembersComponent } from './aboutlayout/tableLayout/table-layout/members/members.component';
 import { TableLayoutComponent } from './aboutlayout/tableLayout/table-layout/table-layout.component';
 import { TeachersComponent } from './aboutlayout/tableLayout/table-layout/teachers/teachers.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AdmiComponent } from './admi/admi/admi.component';
 
 
 export const routes: Routes = [
 
   { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-
+  
    { path: 'homepage', component: HomepageComponent },
+   
+   
 
   { path: "", component: PagesLayoutComponent,
     children: [
@@ -33,10 +37,13 @@ export const routes: Routes = [
       { path: 'gallery', component: GalleryComponent },
       { path: 'constitution', component: ConstitutionComponent },
       { path: 'location', component: LocationComponent },
+      { path: "login", component: LoginComponent },
+      { path: "admin", component: AdmiComponent },
 ]
   },
    { path: "aboutlayout", component: AboutlayoutComponent,
     children: [
+      { path: "login", component: LoginComponent },
        { path: "", redirectTo: "aboutlayout", pathMatch: "full"},
        { path: 'the-school', component: TheSchoolComponent },
        { path: 'table-layout', component: TableLayoutComponent,
@@ -56,9 +63,10 @@ export const routes: Routes = [
       { path: 'objective3', component: Objective3Component },
     ],
   },
+
 ]
 },
 
-  //  { path: '**', redirectTo: 'homepage' }
+  //  { path: '**', redirectTo: 'homepage'  }
 ];
 

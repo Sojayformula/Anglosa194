@@ -50,7 +50,7 @@ export class LoginComponent {
     console.log('Logged in as:', user.email, 'Role:', role);
 
     if (role === 'admin') {
-      this.router.navigate(['/admin-dashboard']);
+      this.router.navigate(['/admin']);
     } else {
       this.router.navigate(['/homepage']);
     }

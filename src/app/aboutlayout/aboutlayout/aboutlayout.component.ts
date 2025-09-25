@@ -41,6 +41,10 @@ export class AboutlayoutComponent implements OnInit{
     this.isMenuOpen = !this.isMenuOpen; 
   }
 
+    admin(){
+  this.router.navigate(['/login'])
+  }
+
      // navigate to footer //
 scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

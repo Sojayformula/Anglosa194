@@ -76,7 +76,7 @@
     <!-- HERO CONTENT -->
     <div class="relative z-10 flex flex-col items-center justify-center text-center h-[calc(100vh-80px)] px-4">
       <button (click)="theLogo()">
-        <img src="schlogo1.png" class="mt-32 w-20 sm:w-28 md:w-36 transition-transform duration-500 hover:scale-110">
+        <img src="schlogo1.png" (click)="theLogo()" class="mt-32 w-20 sm:w-28 md:w-36 transition-transform duration-500 hover:scale-110">
       </button>
       <h1 class="text-white text-2xl sm:text-4xl md:text-5xl font-bold mt-6 leading-tight">
         Welcome to Anglosa 194
@@ -120,26 +120,26 @@
   <!-- FOOTER -->
   <div id="contact" class="bg-gray-600 flex flex-col sm:flex-row justify-between items-center gap-6 p-6 text-white">
     <div>
-      <p class="font-bold">Contact Numbers:</p>
+      <!-- <p class="font-bold">Contact Numbers:</p> -->
       <p class="mt-2">055028888888</p>
     </div>
     <div>
-      <h1 class="font-bold">Address:</h1>
+      <!-- <h1 class="font-bold">Address:</h1> -->
       <p class="mt-2">P. O. Box A64</p>
       <p>La, Accra, Ghana</p>
     </div>
     <div>
-      <h1 class="font-bold">Email & Social Handles:</h1>
+      <!-- <h1 class="font-bold">Email & Social Handles:</h1> -->
       <p class="mt-2">info&#64;anglosa194.com</p>
       <p>Connect with us on social media</p>
     </div>
     <div class="flex gap-6">
-      <a href="#"><img src="facebook.png" class="w-8 sm:w-10"></a>
+      <a href="#"><img src="facebook.png" class="w-8 sm:w-6"></a>
       <a href="https://wa.me/+233272062942" target="_blank" rel="noopener">
-        <img src="whatsapp.png" class="w-8 sm:w-10">
+        <img src="whatsapp.png" class="w-8 sm:w-6">
       </a>
-      <a href="#"><img src="instagram.png" class="w-8 sm:w-10"></a>
-      <a href="#"><img src="twitter.png" class="w-8 sm:w-10"></a>
+      <a href="#"><img src="instagram.png" class="w-8 sm:w-6"></a>
+      <a href="#"><img src="twitter.png" class="w-8 sm:w-6"></a>
     </div>
   </div>
 </div>

@@ -46,7 +46,7 @@
     </div>
 
     <!-- Join button -->
-    <button class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
+    <button (click)="admin()" class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
       Join
     </button>
 
@@ -64,7 +64,7 @@
   <a routerLink="/location" (click)="toggleMenu()" class="block text-white">Location</a>
   <a (click)="scrollToContact(); toggleMenu()" class="block text-white cursor-pointer">Contact</a>
 
-   <button class="w- full bg-red-500 text-white font-semibold px-4 py-2 rounded-lg">
+   <button (click)="admin()" class="w- full bg-red-500 text-white font-semibold px-4 py-2 rounded-lg">
       Join 
     </button>
 </div>
@@ -79,11 +79,11 @@
 <!-- FOOTER -->
 <div id="contact" class="bg-gray-600 flex flex-col md:flex-row justify-between items-center p-6 text-white gap-6 mt- [115px] absolute w-full">
   <div>
-    <p class="font-bold">Contact Numbers:</p>
+    <!-- <p class="font-bold">Contact Numbers:</p> -->
     <p class="mt-2">055028888888</p>
   </div>
   <div>
-    <h1 class="font-bold">Address:</h1>
+    <!-- <h1 class="font-bold">Address:</h1> -->
     <p class="mt-2">P. O. Box A64</p>
     <p>La, Accra, Ghana</p>
   </div>

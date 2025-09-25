@@ -41,9 +41,13 @@
     </div>
 
     <!-- Join button -->
-    <button class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
+    <button (click)="admin()" class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
       Join
     </button>
+      <!-- <a routerLink="/login" routerLinkActive="bg-gray-300 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+      class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base"
+       >
+        Join</a> -->
 
     <!-- Mobile menu button -->
     <button (click)="toggleMenu()" class="md:hidden text-white text-2xl">
@@ -124,7 +128,7 @@
 </div>
 
 <!-- STATS SECTION -->
-<div class="bg-gradient-to-b from-purple-500 via-purple-800 to-purple-900 px-4">
+<div class="bg- gradient-to-b from-purple-500 via-purple-800 to-purple-900 px-4 opacity- 40 bg-gray-500">
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center text-white">
     <div>
       <p [appCountUp]="2022" class="font-bold text-2xl sm:text-3xl"></p>
@@ -195,23 +199,23 @@ Looking forward to meeting you!
 <!-- FOOTER -->
 <div id="contact" class="bg-gray-600 flex flex-col md:flex-row justify-between items-center p-6 text-white gap-6 mt- [115px] absolute w-full">
   <div>
-    <p class="font-bold">Contact Numbers:</p>
+    <!-- <p class="font-bold">Contact Numbers:</p> -->
     <p class="mt-2">055028888888</p>
   </div>
   <div>
-    <h1 class="font-bold">Address:</h1>
+    <!-- <h1 class="font-bold">Address:</h1> -->
     <p class="mt-2">P. O. Box A64</p>
     <p>La, Accra, Ghana</p>
   </div>
   <div>
-    <h1 class="font-bold">Email & Social Handles:</h1>
+    <!-- <h1 class="font-bold">Email & Social Handles:</h1> -->
     <p class="mt-2">info&#64;anglosa194.com</p>
     <p>Connect with us on social media</p>
   </div>
   <div class="flex gap-6">
-    <a href=""><img src="/facebook.png" class="w-8 sm:w-10"></a>
-    <a href=""><img src="/whatsapp.png" class="w-8 sm:w-10"></a>
-    <a href=""><img src="/instagram.png" class="w-8 sm:w-10"></a>
-    <a href=""><img src="/twitter.png" class="w-8 sm:w-10"></a>
+    <a href=""><img src="/facebook.png" class="w-8 sm:w-6"></a>
+    <a href=""><img src="/whatsapp.png" class="w-8 sm:w-6"></a>
+    <a href=""><img src="/instagram.png" class="w-8 sm:w-6"></a>
+    <a href=""><img src="/twitter.png" class="w-8 sm:w-6"></a>
   </div>
 </div> 

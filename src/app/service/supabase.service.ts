@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { Teacher } from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,130 +17,6 @@ export class SupabaseService {
     );
   }
 
-
-//   async signIn(email: string, password: string) {
-//   const { data, error } = await this.supabase.auth.signInWithPassword({
-//     email,
-//     password,
-//   });
-
-//   if (error) throw error;
-
-//   const user = data.user;
-
-//   // fetch role from teachers table (or admi table if that’s where roles live)
-//   const { data: roleData, error: roleError } = await this.supabase
-//     .from('teachers') // or 'admi'
-//     .select('role')
-//     .eq('user_id', user.id)
-//     .single();
-
-//   if (roleError) throw roleError;
-
-//   return {
-//     user,
-//     role: roleData?.role || 'teacher', // fallback
-//   };
-// }
-
-//   async signOut() {
-//     await this.supabase.auth.signOut();
-//   }
-
-//   async getCurrentUser() {
-//     const { data, error } = await this.supabase.auth.getUser();
-//     if (error) throw error;
-//     return data.user;
-//   }
-
-//   // =============================
-//   // CONTENTS TABLE
-//   // =============================
-//   async getContents() {
-//     const { data, error } = await this.supabase
-//       .from('contents')
-//       .select('*');
-//     if (error) throw error;
-//     return data;
-//   }
-
-//   async addContent(content: { name: string; description: string }) {
-//     const { data, error } = await this.supabase
-//       .from('contents')
-//       .insert([content]);
-//     if (error) throw error;
-//     return data;
-//   }
-
-//   async updateContent(id: number, updates: any) {
-//     const { data, error } = await this.supabase
-//       .from('contents')
-//       .update(updates)
-//       .eq('id', id);
-//     if (error) throw error;
-//     return data;
-//   }
-
-//   async deleteContent(id: number) {
-//     const { error } = await this.supabase
-//       .from('contents')
-//       .delete()
-//       .eq('id', id);
-//     return { error };
-//   }
-
-//   // =============================
-//   // TEACHERS TABLE
-//   // =============================
-//   async getteachContents() {
-//     const { data, error } = await this.supabase
-//       .from('teachers')
-//       .select('*');
-//     if (error) throw error;
-//     return data;
-//   }
-
-//   async addteachContent(teacher: {
-//     teachname: string;
-//     teachgender: string;
-//     teachposition: string;
-//     email?: string;
-//     role?: string;
-//   }) {
-//     const { data, error } = await this.supabase
-//       .from('teachers')
-//       .insert([teacher]);
-//     if (error) throw error;
-//     return data;
-//   }
-
-//   async updateTeacher(id: number, updates: any) {
-//     const { data, error } = await this.supabase
-//       .from('teachers')
-//       .update(updates)
-//       .eq('id', id);
-//     if (error) throw error;
-//     return data;
-//   }
-
-//   async deleteTeacher(id: number) {
-//     const { error } = await this.supabase
-//       .from('teachers')
-//       .delete()
-//       .eq('id', id);
-//     return { error };
-//   }
-
-//   // ✅ Extra helper: get teacher by email (to check role)
-//   async getTeacherByEmail(email: string) {
-//     const { data, error } = await this.supabase
-//       .from('teachers')
-//       .select('id, teachname, role')
-//       .eq('email', email)
-//       .single();
-//     if (error) throw error;
-//     return data;
-//   }
 
 // =============================
 // AUTH
@@ -212,19 +89,38 @@ async getContents() {
 }
 
 
+// async addContent(content: { name: string; description: string }) {
+//   const { data, error } = await this.supabase
+//     .from('contents')
+//     .insert([content]);
+//   if (error) throw error;
+//   return data;
+// }
 async addContent(content: { name: string; description: string }) {
   const { data, error } = await this.supabase
     .from('contents')
-    .insert([content]);
+    .insert([content])
+    .select(); // return inserted row
   if (error) throw error;
   return data;
 }
 
+
+
+// async updateContent(id: number, updates: any) {
+//   const { data, error } = await this.supabase
+//     .from('contents')
+//     .update(updates)
+//     .eq('id', id);
+//   if (error) throw error;
+//   return data;
+// }
 async updateContent(id: number, updates: any) {
   const { data, error } = await this.supabase
     .from('contents')
     .update(updates)
-    .eq('id', id);
+    .eq('id', id)
+    .select();
   if (error) throw error;
   return data;
 }
@@ -240,18 +136,6 @@ async deleteContent(id: number) {
 // =============================
 // TEACHERS TABLE
 // =============================
-// async getteachContents() {
-//   const { data, error } = await this.supabase
-//     .from('teachers')
-//     .select('*');
-//   if (error) throw error;
-
-//   // Optional: add rowNumber for Angular display
-//   return data?.map((row, index) => ({
-//     ...row,
-//     rowNumber: index + 1,
-//   })) ?? [];
-// }
 async getteachContents() {
   const { data, error } = await this.supabase
     .from('teachers')
@@ -262,30 +146,63 @@ async getteachContents() {
 
   return data?.map((row, index) => ({
     ...row,
-    rowNumber: index + 1, // now this will be 1, 2, 3…
+    rowNumber: index + 1, 
   })) ?? [];
 }
 
 
-async addteachContent(teacher: {
-  teachname: string;
-  teachgender: string;
-  teachposition: string;
-  email?: string;
-  role?: string;
-}) {
+// async addteachContent(teacher: any) {
+//   const { data, error } = await this.supabase
+//     .from('teachers')
+//     .insert([teacher]);
+
+//   if (error) throw error;
+//   return data;
+// }
+
+// async addteachContent(teacher: Teacher) {
+//   const { data, error } = await this.supabase
+//     .from('teachers')
+//     .insert([teacher])
+//     .select();
+//   if (error) throw error;
+//   return data;
+// }
+async addteachContent(teacher: Teacher) {
+  // Only send DB columns
+  const insertData = {
+    teachname: teacher.teachname,
+    teachgender: teacher.teachgender,
+    teachposition: teacher.teachposition,
+    email: teacher.email,
+    role: teacher.role,
+    user_id: teacher.user_id ?? null
+  };
+
   const { data, error } = await this.supabase
     .from('teachers')
-    .insert([teacher]);
+    .insert([insertData])
+    .select();
+
   if (error) throw error;
   return data;
 }
 
+
+// async updateTeacher(id: number, updates: any) {
+//   const { data, error } = await this.supabase
+//     .from('teachers')
+//     .update(updates)
+//     .eq('id', id);
+//   if (error) throw error;
+//   return data;
+// }
 async updateTeacher(id: number, updates: any) {
   const { data, error } = await this.supabase
     .from('teachers')
     .update(updates)
-    .eq('id', id);
+    .eq('id', id)
+    .select();
   if (error) throw error;
   return data;
 }

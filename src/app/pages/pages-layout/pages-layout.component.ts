@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pages-layout',
@@ -11,6 +11,13 @@ import { RouterModule } from '@angular/router';
 export class PagesLayoutComponent {
 
   isMenuOpen = false
+
+
+   constructor(private router: Router){}
+
+    admin(){
+  this.router.navigate(['/login'])
+  }
 
   // navigate to footer //
 scrollToContact() {
