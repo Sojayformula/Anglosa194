@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SupabaseService } from '../../service/supabase.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,7 @@ import { Teacher } from '../../model';
   templateUrl: './admi.component.html',
   styleUrl: './admi.component.scss'
 })
-export class AdmiComponent {
+export class AdmiComponent implements OnInit{
 
   
   contents: any[] = [];
@@ -40,9 +40,11 @@ export class AdmiComponent {
 
   constructor(private supabase: SupabaseService) {}
 
+
   async ngOnInit() {
     await this.loadContents();
     await this.loadTeachers();
+    await this.loadSubmissions();
   }
 
   // ===== CONTENTS =====
