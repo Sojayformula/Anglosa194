@@ -88,4 +88,35 @@
       </tbody>
     </table>
   </section>
+
+
+
+
+
+
+  <!-- COMMENTS -->
+   <h3 class="text-lg font-bold mt-10">User Submissions</h3>
+<table class="min-w-full table-auto mt-4 border">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="p-2 border">Name</th>
+      <th class="p-2 border">Email</th>
+      <th class="p-2 border">Comment</th>
+      <th class="p-2 border">File</th>
+      <th class="p-2 border">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sub of submissions">
+      <td class="p-2 border">{{ sub.username }}</td>
+      <td class="p-2 border">{{ sub.email }}</td>
+      <td class="p-2 border">{{ sub.comment }}</td>
+      <td class="p-2 border">
+        <a *ngIf="sub.file_url" [href]="sub.file_url" target="_blank" class="text-blue-600">View File</a>
+      </td>
+      <td class="p-2 border">{{ sub.created_at | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+
 </div>

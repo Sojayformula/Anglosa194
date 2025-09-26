@@ -122,6 +122,14 @@ editTeacher(teacher: Teacher) {
 }
 
 
+submissions: any[] = [];
+
+async loadSubmissions() {
+  this.submissions = await this.supabase.getSubmissions();
+}
+
+
+
 
 }
 

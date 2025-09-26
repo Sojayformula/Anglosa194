@@ -23,67 +23,31 @@
       </div>
 
       <div class="w-[35rem]">
-        ........ School 
-      La beach road
-      Solihull   
-      West Midlands
-      B92 8LW
+     
+        <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow rounded-lg">
+  <h2 class="text-xl font-bold mb-4">Submit your comment</h2>
 
-      .......... School ........
-      Fallowfield Road 
-      Solihull 
-      West Midlands 
-      B92 9HQ
+  <form (ngSubmit)="submit()">
+    <input [(ngModel)]="username" name="username" type="text" placeholder="Your Name"
+      class="w-full mb-3 p-2 border rounded" required>
 
-      Telephone: 0121 743 491              
-      Email: office&#64;Anglican.org
-      Headteacher:  Miss S. Milewski
+    <input [(ngModel)]="email" name="email" type="email" placeholder="Your Email"
+      class="w-full mb-3 p-2 border rounded">
 
-      Deputy Headteacher: Mrs K. Wilton
+    <textarea [(ngModel)]="comment" name="comment" placeholder="Your Comment"
+      class="w-full mb-3 p-2 border rounded" required></textarea>
 
-      Chair of Community Council: Mrs A. Butcher
+    <input type="file" (change)="onFileSelected($event)" class="mb-3">
 
-     ......... School
+    <button type="submit"
+      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      Submit
+    </button>
+  </form>
 
-      If you wish to discuss anything related to Disabilities and Special Education Needs contact:
+  <p *ngIf="message" class="mt-3 text-green-600">{{ message }}</p>
+</div>
 
-      Assistant Headteacher/ Inclusion Lead: Mrs Heaven. 
-
-      If you have any queries, compliments or complaints that you wish to discuss, please contact the Parent Liaison Lead Mrs Coldwell via email: 
-
-      parentliaison&#64;Anglican.org
-
-      If you would like a paper copy of any of our policies or any document from this website, please contact us via either school office using the contact details above. These will be provided free of charge.
-
-      Our office team is led by Mrs Coldwell and she or one of our office team; Mrs Green, Mrs Fear or Mrs Lunham, will be happy to help you if you contact our office either by telephone or by email. 
-
-      If you need to contact Explorers, our before and after school care providers outside of office hours, please call our Explorers Manager Mrs Freeborn on 07850928320 or email: explorers&#64;........org
-
-      Class email addresses: 
-
-      To contact teacher directly, find your child’s class name below and use the corresponding email address. Please note these emails are not checked daily so please contact the office for any urgent enquiries.
-
-      nursery&#64;Anglican.org 
-
-      astonr&#64;Anglican.org 
-
-      gryllsr&#64;Anglican.org 
-
-      peaker&#64;Anglican.org 
-
-      bell1&#64;Anglican.org 
-
-      lee1&#64;Anglican.org 
-
-      shaw1&#64;Anglican.org 
-
-
-
-      Safeguarding concerns
-
-      Safeguarding is everybody’s responsibility. If you have a 
-      concern about a child, please do contact the school and 
-      ask for a Designated Safeguarding Lead to discuss this. 
 
     
       </div>

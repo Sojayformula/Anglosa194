@@ -227,4 +227,45 @@ async getTeacherByEmail(email: string) {
 }
 
 
+// =============================
+// SUBMISSIONS TABLE + FILE UPLOAD
+// =============================
+async uploadFile(file: File): Promise<string> {
+  const filePath = `${Date.now()}_${file.name}`;
+  const { data, error } = await this.supabase.storage
+    .from('uploads')  // 👈 bucket name
+    .upload(filePath, file);
+
+  if (error) throw error;
+
+  // Get public URL
+  const { data: publicUrl } = this.supabase.storage
+    .from('uploads')
+    .getPublicUrl(filePath);
+
+  return publicUrl.publicUrl;
+}
+
+async addSubmission(username: string, email: string, comment: string, fileUrl: string | null) {
+  const { data, error } = await this.supabase
+    .from('submissions')
+    .insert([{ username, email, comment, file_url: fileUrl }])
+    .select();
+
+  if (error) throw error;
+  return data;
+}
+
+async getSubmissions() {
+  const { data, error } = await this.supabase
+    .from('submissions')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
+
+
+
 }
