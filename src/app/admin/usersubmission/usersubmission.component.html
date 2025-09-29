@@ -1,0 +1,60 @@
+<div class="p-20 mt-[5rem]">
+<!-- COMMENTS -->
+ <section>
+   <h3 class="text-lg font-bold mt-10">User Submissions</h3>
+<table class="min-w-full table-auto mt-4 border">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="p-2 border">Name</th>
+      <th class="p-2 border">Email</th>
+      <th class="p-2 border">Comment</th>
+      <th class="p-2 border">File</th>
+      <th class="p-2 border">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sub of submissions">
+      <td class="p-2 border">{{ sub.username }}</td>
+      <td class="p-2 border">{{ sub.email }}</td>
+      <td class="p-2 border w-64">{{ sub.comment }}</td>
+      <td class="p-2 border">
+        <a *ngIf="sub.file_url" [href]="sub.file_url" target="_blank" class="text-blue-600">View File</a>
+      </td>
+      <td class="p-2 border">{{ sub.created_at | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- admi.component.html -->
+<!-- <div *ngIf="currentUserRole === 'admin'" class="mb-6">
+  <input type="file" (change)="onFileSelected($event)" />
+  <button (click)="uploadFile()" class="bg-blue-500 text-white px-3 py-1 rounded">
+    Upload
+  </button>
+</div> -->
+
+<!-- admi.component.html -->
+<div *ngIf="currentUserRole === 'admin'" class="p-4 border rounded mb-6">
+  <h2 class="font-bold mb-2">Upload Files</h2>
+  
+  <input type="file" (change)="onFileSelected($event)" class="mb-2" />
+  <button (click)="uploadFile()" 
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Upload
+  </button>
+
+  <div class="mt-4">
+    <h3 class="font-semibold">Uploaded Files</h3>
+    <ul>
+      <li *ngFor="let file of uploadedFiles">
+        <a [href]="file.url" target="_blank" class="text-blue-500 underline">
+          {{ file.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</section>
+
+</div>

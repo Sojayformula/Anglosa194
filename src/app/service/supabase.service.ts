@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Teacher } from '../model';
 
+
+const supabaseUrl = 'https://zqgpkgitbtxbxkjvjaez.supabase.co';
+const supabaseKey =  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxZ3BrZ2l0YnR4YnhranZqYWV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0MjM2NjYsImV4cCI6MjA3Mjk5OTY2Nn0.6JvKyoMU9FbW0ueLwQ3oC7lqD1lcNZikAzV6uVYu9Ds' // replace
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +16,12 @@ export class SupabaseService {
    private supabase: SupabaseClient;
 
   constructor() { 
-      this.supabase = createClient(
-      'https://zqgpkgitbtxbxkjvjaez.supabase.co',  
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxZ3BrZ2l0YnR4YnhranZqYWV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0MjM2NjYsImV4cCI6MjA3Mjk5OTY2Nn0.6JvKyoMU9FbW0ueLwQ3oC7lqD1lcNZikAzV6uVYu9Ds' // replace
-    );
+    //   this.supabase = createClient(
+    //   'https://zqgpkgitbtxbxkjvjaez.supabase.co',  
+    //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxZ3BrZ2l0YnR4YnhranZqYWV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc0MjM2NjYsImV4cCI6MjA3Mjk5OTY2Nn0.6JvKyoMU9FbW0ueLwQ3oC7lqD1lcNZikAzV6uVYu9Ds' // replace
+    // );
+
+    this.supabase = createClient(supabaseUrl, supabaseKey);
   }
 
 
@@ -230,21 +237,21 @@ async getTeacherByEmail(email: string) {
 // =============================
 // SUBMISSIONS TABLE + FILE UPLOAD
 // =============================
-async uploadFile(file: File): Promise<string> {
-  const filePath = `${Date.now()}_${file.name}`;
-  const { data, error } = await this.supabase.storage
-    .from('uploads')  // 👈 bucket name
-    .upload(filePath, file);
+// async uploadFile(file: File): Promise<string> {
+//   const filePath = `${Date.now()}_${file.name}`;
+//   const { data, error } = await this.supabase.storage
+//     .from('uploads')  // 👈 bucket name
+//     .upload(filePath, file);
 
-  if (error) throw error;
+//   if (error) throw error;
 
-  // Get public URL
-  const { data: publicUrl } = this.supabase.storage
-    .from('uploads')
-    .getPublicUrl(filePath);
+//   // Get public URL
+//   const { data: publicUrl } = this.supabase.storage
+//     .from('uploads')
+//     .getPublicUrl(filePath);
 
-  return publicUrl.publicUrl;
-}
+//   return publicUrl.publicUrl;
+// }
 
 async addSubmission(username: string, email: string, comment: string, fileUrl: string | null) {
   const { data, error } = await this.supabase
@@ -265,6 +272,106 @@ async getSubmissions() {
   if (error) throw error;
   return data;
 }
+
+
+
+
+
+
+  // ✅ expose storage
+  get storage() {
+    return this.supabase.storage;
+  }
+
+  // Example: file upload helper
+  // async uploadFile(file: File): Promise<string | null> {
+  //   const filePath = `messages/${Date.now()}_${file.name}`;
+  //   const { data, error } = await this.storage
+  //     .from('uploads')
+  //     .upload(filePath, file);
+
+  //   if (error) {
+  //     console.error('Upload error:', error.message);
+  //     return null;
+  //   }
+
+  //   const { data: publicUrl } = this.storage
+  //     .from('uploads')
+  //     .getPublicUrl(filePath);
+
+  //   return publicUrl.publicUrl;
+  // }
+
+
+
+
+   // example: list files from "uploads" bucket
+  async listUploads() {
+    return await this.supabase.storage.from('uploads').list();
+  }
+
+  // example: get user role
+  async getUserRole(userId: string): Promise<string | null> {
+    const { data, error } = await this.supabase
+      .from('teachers')
+      .select('role')
+      .eq('user_id', userId)
+      .single();
+
+    if (error) {
+      console.error('Error fetching role:', error.message);
+      return null;
+    }
+
+    return data?.role || null;
+  }
+
+
+   async uploadFile(file: File): Promise<string | null> {
+    const filePath = `${Date.now()}-${file.name}`;
+    const { error } = await this.supabase.storage
+      .from('uploads')
+      .upload(filePath, file);
+
+    if (error) throw error;
+
+    const { data } = this.supabase.storage.from('uploads').getPublicUrl(filePath);
+    return data.publicUrl;
+  }
+
+  async listFiles(): Promise<{ name: string; url: string }[]> {
+    const { data, error } = await this.supabase.storage
+      .from('uploads')
+      .list('', { limit: 100 });
+
+    if (error) throw error;
+
+    return data.map(file => ({
+      name: file.name,
+      url: this.supabase.storage.from('uploads').getPublicUrl(file.name).data.publicUrl,
+    }));
+  }
+
+
+  // UPLOAD TO GALLERY
+  async addGalleryFile(url: string) {
+  const { data, error } = await this.supabase
+    .from('gallery') // your table to store uploaded files
+    .insert([{ file_url: url }])
+    .select();
+  if (error) throw error;
+  return data;
+}
+
+async listGalleryFiles() {
+  const { data, error } = await this.supabase
+    .from('gallery')
+    .select('*')
+    .order('id', { ascending: true });
+  if (error) throw error;
+  return data;
+}
+
 
 
 

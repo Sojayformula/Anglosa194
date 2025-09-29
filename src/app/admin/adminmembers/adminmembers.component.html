@@ -1,0 +1,39 @@
+<div class="p-20 mt-20 space-y-8">
+  <!-- CONTENTS SECTION -->
+   <section>
+    <h2 class="text-xl font-bold mb-4">Manage Members</h2>
+    <form (ngSubmit)="addContent()" class="flex flex-wrap gap-2 mb-4">
+      <input [(ngModel)]="newContent.name" name="name" placeholder="Name"
+        class="border rounded px-2 py-1" required>
+      <input [(ngModel)]="newContent.description" name="description" placeholder="Description"
+        class="border rounded px-2 py-1" required>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-1 rounded">Add</button>
+    </form>
+
+    <table class="border-collapse border text-sm w-[60rem]">
+      <thead>
+        <tr class="bg-gray-100 text-">
+          <th class="border px-2 py-1">Id</th>
+          <th class="border px-2 py-1">Full name</th>
+          <th class="border px-2 py-1">Gender</th>
+          <th class="border px-2 py-1">Full Academic Year</th>
+           <th class="border px-2 py-1">Position</th>
+            <th class="border px-2 py-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of contents" >
+          <td class="border px-2 py-1">{{ item.rowNumber }}</td>
+          <td class="border px-2 py-1">{{ item.name }}</td>
+          <td class="border px-2 py-1">{{ item.gender }}</td>
+          <td class="border px-2 py-1">{{ item.academic }}</td>
+          <td class="border px-2 py-1">{{ item.position }}</td>
+          <td class="border px-2 py-1 space-x-2">
+            <button (click)="editContent(item)" class="text-blue-600">Edit</button>
+            <button (click)="deleteContent(item.id)" class="text-red-600">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  </div> 

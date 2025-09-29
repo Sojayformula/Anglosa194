@@ -20,7 +20,10 @@ import { MembersComponent } from './aboutlayout/tableLayout/table-layout/members
 import { TableLayoutComponent } from './aboutlayout/tableLayout/table-layout/table-layout.component';
 import { TeachersComponent } from './aboutlayout/tableLayout/table-layout/teachers/teachers.component';
 import { LoginComponent } from './pages/login/login.component';
-import { AdmiComponent } from './admi/admi/admi.component';
+import { AdminComponent } from './admin/admin/admin.component'; 
+import { AdminlayoutComponent } from './admin/adminlayout/adminlayout.component';
+import { AdminmembersComponent } from './admin/adminmembers/adminmembers.component';
+import { UsersubmissionComponent } from './admin/usersubmission/usersubmission.component';
 
 
 export const routes: Routes = [
@@ -38,7 +41,15 @@ export const routes: Routes = [
       { path: 'constitution', component: ConstitutionComponent },
       { path: 'location', component: LocationComponent },
       { path: "login", component: LoginComponent },
-      { path: "admin", component: AdmiComponent },
+      // { path: "admin", component: AdminComponent },
+      { path: "", component: AdminlayoutComponent,
+        children: [
+          {path: "", redirectTo:"adminmembers", pathMatch: "full"},
+          {path: "adminmembers", component: AdminmembersComponent},
+          {path: "admin", component: AdminComponent},
+          {path: "Usersubmission", component: UsersubmissionComponent},
+        ]
+      }
 ]
   },
    { path: "aboutlayout", component: AboutlayoutComponent,
@@ -46,8 +57,9 @@ export const routes: Routes = [
       { path: "login", component: LoginComponent },
        { path: "", redirectTo: "aboutlayout", pathMatch: "full"},
        { path: 'the-school', component: TheSchoolComponent },
+      //  { path: "admin", component: AdminComponent },
        { path: 'table-layout', component: TableLayoutComponent,
-    children: [
+     children: [
       { path: "", redirectTo: "members", pathMatch: "full"},
       {path: "members", component: MembersComponent },
       {path: "teachers", component: TeachersComponent },

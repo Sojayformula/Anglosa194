@@ -1,0 +1,99 @@
+<!-- <div class="container flex"> -->
+
+<div class="p-20 mt-20 space-y-8">
+  <!-- CONTENTS SECTION -->
+  <!-- <section>
+    <h2 class="text-xl font-bold mb-4">Manage Contents</h2>
+    <form (ngSubmit)="addContent()" class="flex flex-wrap gap-2 mb-4">
+      <input [(ngModel)]="newContent.name" name="name" placeholder="Name"
+        class="border rounded px-2 py-1" required>
+      <input [(ngModel)]="newContent.description" name="description" placeholder="Description"
+        class="border rounded px-2 py-1" required>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-1 rounded">Add</button>
+    </form>
+
+    <table class="w-full border-collapse border text-sm">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border px-2 py-1">#</th>
+          <th class="border px-2 py-1">Name</th>
+          <th class="border px-2 py-1">Gender</th>
+          <th class="border px-2 py-1">Academic</th>
+          <th class="border px-2 py-1">Position</th>
+           <th class="border px-2 py-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of contents">
+          <td class="border px-2 py-1">{{ item.id }}</td>
+          <td class="border px-2 py-1">{{ item.name }}</td>
+          <td class="border px-2 py-1">{{ item.gender }}</td>
+          <td class="border px-2 py-1">{{ item.academic }}</td>
+          <td class="border px-2 py-1">{{ item.position }}</td>
+          <td class="border px-2 py-1 space-x-2">
+            <button (click)="editContent(item)" class="text-blue-600">Edit</button>
+            <button (click)="deleteContent(item.id)" class="text-red-600">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section> -->
+
+  <!-- TEACHERS SECTION -->
+  <section>
+    <h2 class="text-xl font-bold mb-4">Manage Teachers</h2>
+    <form (ngSubmit)="addTeacher()" class="flex flex-wrap gap-2 mb-4 items-center">
+      <input [(ngModel)]="newTeacher.teachname" name="teachname" placeholder="Name"
+        class="border rounded px-2 py-1" required>
+
+      <select [(ngModel)]="newTeacher.teachgender" name="teachgender"
+        class="border rounded px-2 py-1" required>
+        <option value="">Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <input [(ngModel)]="newTeacher.teachposition" name="teachposition" placeholder="Position"
+        class="border rounded px-2 py-1" required>
+
+      <input [(ngModel)]="newTeacher.email" name="email" placeholder="Email"
+        class="border rounded px-2 py-1">
+
+      <select [(ngModel)]="newTeacher.role" name="role" class="border rounded px-2 py-1">
+        <option value="teacher">Teacher</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <button type="submit" class="bg-green-600 text-white px-4 py-1 rounded">Add</button>
+    </form>
+
+    <table class="w-full border-collapse border text-sm">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border px-2 py-1">#</th>
+          <th class="border px-2 py-1">Name</th>
+          <th class="border px-2 py-1">Gender</th>
+          <th class="border px-2 py-1">Position</th>
+          <th class="border px-2 py-1">Role</th>
+          <th class="border px-2 py-1">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers">
+          <td class="border px-2 py-1">{{ teacher.rowNumber }}</td>
+          <td class="border px-2 py-1">{{ teacher.teachname }}</td>
+          <td class="border px-2 py-1">{{ teacher.teachgender }}</td>
+          <td class="border px-2 py-1">{{ teacher.teachposition }}</td>
+          <td class="border px-2 py-1">{{ teacher.role }}</td>
+          <td class="border px-2 py-1 space-x-2">
+            <button (click)="editTeacher(teacher)" class="text-blue-600">Edit</button>
+            <button (click)="deleteTeacher(teacher.id!)" class="text-red-600">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<!-- </div> -->

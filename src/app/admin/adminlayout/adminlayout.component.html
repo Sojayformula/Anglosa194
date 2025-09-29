@@ -1,0 +1,25 @@
+<div class="flex">
+     <!-- SIDE BAR -->
+     <div class="hidden md:flex w-[7rem] bg-gray-300 ">
+        <div class="text-sm mx-2 mb-10 mt-[12rem] flex flex-col gap-6 cursor-pointer ">
+        <a routerLink="/adminmembers" class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage members<br/>table</a>
+        <a routerLink="/admin" class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage teachers<br/>table</a>
+        <a routerLink="/Usersubmission" class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage<br/> User Comments</a>
+        <a class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage<br/> User Comments</a>
+        </div>
+     </div>
+
+     <div class="hidden z-10 h-full w-[7rem] bg-gray-300">
+        <div class="text-sm mx-2 mb-10 mt-[12rem] flex flex-col gap-6 cursor-pointer">
+        <a routerLink="/adminmembers" class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage members<br/>table</a>
+        <a routerLink="/admin" class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage teachers<br/>table</a>
+        <a class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage<br/> User Comments</a>
+        <a class="hover:bg-gray-100 hover:rounded text-center hover:bg-opacity-50">Manage<br/> User Comments</a>
+        </div>
+     </div>
+     
+<div class="h-full">
+<router-outlet></router-outlet>
+</div>
+
+</div>

@@ -1,6 +1,6 @@
-
+<!-- 
 <div class="p-6 space-y-8">
-  <!-- CONTENTS SECTION -->
+  CONTENTS SECTION
   <section>
     <h2 class="text-xl font-bold mb-4">Manage Contents</h2>
     <form (ngSubmit)="addContent()" class="flex flex-wrap gap-2 mb-4">
@@ -34,7 +34,7 @@
     </table>
   </section>
 
-  <!-- TEACHERS SECTION -->
+  TEACHERS SECTION
   <section>
     <h2 class="text-xl font-bold mb-4">Manage Teachers</h2>
     <form (ngSubmit)="addTeacher()" class="flex flex-wrap gap-2 mb-4 items-center">
@@ -94,7 +94,7 @@
 
 
 
-  <!-- COMMENTS -->
+  COMMENTS
    <h3 class="text-lg font-bold mt-10">User Submissions</h3>
 <table class="min-w-full table-auto mt-4 border">
   <thead class="bg-gray-100">
@@ -110,7 +110,7 @@
     <tr *ngFor="let sub of submissions">
       <td class="p-2 border">{{ sub.username }}</td>
       <td class="p-2 border">{{ sub.email }}</td>
-      <td class="p-2 border">{{ sub.comment }}</td>
+      <td class="p-2 border w-64">{{ sub.comment }}</td>
       <td class="p-2 border">
         <a *ngIf="sub.file_url" [href]="sub.file_url" target="_blank" class="text-blue-600">View File</a>
       </td>
@@ -119,4 +119,44 @@
   </tbody>
 </table>
 
+
+
+
+admi.component.html
+<div *ngIf="currentUserRole === 'admin'" class="p-4 border rounded mb-6">
+  <h2 class="font-bold mb-2">Upload Files</h2>
+  
+  <input type="file" (change)="onFileSelected($event)" class="mb-2" />
+  <button (click)="uploadFile()" 
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Upload
+  </button>
+
+  <div class="mt-4">
+    <h3 class="font-semibold">Uploaded Files</h3>
+    <ul>
+      <li *ngFor="let file of uploadedFiles">
+        <a [href]="file.url" target="_blank" class="text-blue-500 underline">
+          {{ file.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
+
+
+
+</div> -->
+
+
+
+
+
+
+<!-- admi.component.html -->
+<!-- <div *ngIf="currentUserRole === 'admin'" class="mb-6">
+  <input type="file" (change)="onFileSelected($event)" />
+  <button (click)="uploadFile()" class="bg-blue-500 text-white px-3 py-1 rounded">
+    Upload
+  </button>
+</div> -->
