@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SupabaseService } from '../../service/supabase.service';
@@ -10,8 +10,30 @@ import { SupabaseService } from '../../service/supabase.service';
   templateUrl: './location.component.html',
   styleUrl: './location.component.scss'
 })
-export class LocationComponent {
+export class LocationComponent implements OnInit{
 
+    // Fixed destination (school/event location)
+  // destination = 'La St. Pauls Anglican Church';
+  
+  // // Google Maps directions link
+  // mapsLink = `https://www.google.com/maps/dir/?api=1&destination=${this.destination}`;
+
+// Place ID of destination (example ID)
+destinationPlaceId = 'la st. pauls anglican church';
+
+// Google Maps directions link with place_id
+mapsLink = `https://www.google.com/maps/dir/?api=1&destination=place_id:${this.destinationPlaceId}`;
+
+
+
+
+
+
+  ngOnInit(){
+
+  }
+
+ 
      // navigate to footer //
 scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
