@@ -6,15 +6,15 @@
 
 <div class="overflow-hidden">
     <!-- EMAIL -->
-    <div class="bg-gradient-to-b from-purple-400 via-purple-600 to-purple-700 py-1 text-white fixed top-0 left-0 w-full z-50">
+    <!-- <div class="bg-gradient-to-b from-purple-400 via-purple-600 to-purple-700 py-1 text-white fixed top-0 left-0 w-full z-50">
     <div class="flex mx-20">
      <span class="material-symbols-outlined ">mail</span>
      <span class="tracking-tight font-bold text-sm">anglosa194&#64;yahoo.com.gh</span>
      </div>
-    </div>
+    </div> -->
 
   <!-- NAVBAR -->
-  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-purple-800 top-0 left-0 w-full mt-8">
+  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-purple-800 top-0 left-0 w-full mt- 8">
     <div class="flex justify-between items-center w-full text- red-500">
       
        <!-- SCHOOL LOGO -->
@@ -28,9 +28,36 @@
       <a routerLink="/homepage" routerLinkActive="bg-gray-300 font-bold !text-black border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 rounded-md text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Home Page</a>
-      <a routerLink="/aboutlayout" routerLinkActive="bg-gray-300 font-bold !text-black border border-white !text-black hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg" 
+      <!-- <a routerLink="/aboutlayout" routerLinkActive="bg-gray-300 font-bold !text-black border border-white !text-black hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg" 
         class="text-white px-3 py-2 rounded-lg text-sm sm:text-base hover:bg-gray-100 hover:text-black transition-colors duration-200 ">
-        About Us</a>
+        About Us</a> -->
+        <div class="relative group">
+      <button  routerLink="/aboutlayout" 
+          routerLinkActive="!bg-gray-300 !text-black font-bold border border-white" 
+       class="flex items-center text-white px-3 py-2 rounded-lg text-sm sm:text-base hover:bg-gray-100 hover:text-black transition-colors duration-200 "
+      >
+        About
+        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <!-- Dropdown items -->
+      <div
+        class="absolute left-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+        <a routerLink="/aboutlayout" 
+          class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+        <a routerLink="/aboutlayout/the-school"
+          class="block px-4 py-2 hover:bg-gray-100">The School</a>
+          <a routerLink="/aboutlayout/year-group"
+          class="block px-4 py-2 hover:bg-gray-100">Year Group</a>
+        <a routerLink="/aboutlayout/table-layout"
+          class="block px-4 py-2 hover:bg-gray-100">Members</a>
+        <a routerLink="/aboutlayout/table-layout/teachers"
+          class="block px-4 py-2 hover:bg-gray-100">Teachers</a>
+      </div>
+    </div>
       <a routerLink="/gallery" routerLinkActive="bg-gray-300 font-bold !text-black border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg" 
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Gallery</a>
@@ -39,10 +66,10 @@
         Constitution</a>
       <a routerLink="/location" routerLinkActive="bg-gray-300 font-bold !text-black border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
-        Location</a>
-      <a (click)="scrollToContact()" routerLinkActive="bg-gray-300 font-bold !text-black border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
+        Contact Us</a>
+      <!-- <a (click)="scrollToContact()" routerLinkActive="bg-gray-300 font-bold !text-black border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
         class="text-white  cursor-pointer px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
-        Contact</a>
+        Contact</a> -->
     </div>
 
     <!-- Join button -->
@@ -76,26 +103,42 @@
 
 <router-outlet></router-outlet>
 
-<!-- FOOTER -->
-<div id="contact" class="bg-gray-600 flex flex-col md:flex-row justify-between items-center p-6 text-white gap-6 mt- [215px] absolute w-full">
-  <div>
-    <!-- <p class="font-bold">Contact Numbers:</p> -->
-    <p class="mt-2">055028888888</p>
+
+
+ <!-- FOOTER -->
+  <div id="contact" class="bg-gray-900">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-6 p-6 text-white md:mx-[8rem]">
+    <div class="space-y-3">
+      <h1 class="font-bold">Street Address</h1>
+      <p >La St. Paul's Anglican 1 JHS</p>
+      <p >La Beach Road </p>
+      <p >West La, Acrra-Ghana</p>
+    </div>
+    <div class="space-y-3">
+      <h1 class="font-bold">Postal Address:</h1>
+      <p >P. O. Box A64</p>
+      <p >La, Accra,</p>
+      <p >Ghana.</p>
+    </div>
+    <div class="space-y-1">
+      <h1 class="font-bold">Phone & Email</h1>
+      <p class="mt-">+23355667802</p>
+      <p class="mt-">+23344126678</p>
+      <p class="mt-">+23355981802</p>
+      <p class="mt-">info&#64;anglosa194.com</p>
+    </div>
+    <div class="space-y-[6.5rem]">
+      <h1 class="font-bold">Connect with us on social media</h1>
+      <div class="flex gap-6 space-y-[-3rem]">
+      <!-- <a href="https://wa.me/+233272062942" target="_blank" rel="noopener">
+        <img src="whatsapp.png" class="w-8 sm:w-6">
+      </a> -->
+      <p></p>
+       <a href="#"><img src="facebook.png" class="w-8 sm:w-6 "></a>
+      <a href="#"><img src="instagram.png" class="w-8 sm:w-6"></a>
+      <a href="#"><img src="twitter.png" class="w-8 sm:w-6"></a>
+      </div>
+    </div>
   </div>
-  <div>
-    <!-- <h1 class="font-bold">Address:</h1> -->
-    <p class="mt-2">P. O. Box A64</p>
-    <p>La, Accra, Ghana</p>
-  </div>
-  <div>
-    <h1 class="font-bold">Email & Social Handles:</h1>
-    <p class="mt-2">info&#64;anglosa194.com</p>
-    <p>Connect with us on social media</p>
-  </div>
-  <div class="flex gap-6">
-    <a href=""><img src="/facebook.png" class="w-8 sm:w-10"></a>
-    <a href=""><img src="/whatsapp.png" class="w-8 sm:w-10"></a>
-    <a href=""><img src="/instagram.png" class="w-8 sm:w-10"></a>
-    <a href=""><img src="/twitter.png" class="w-8 sm:w-10"></a>
-  </div>
-</div> 
+</div>
+</div>

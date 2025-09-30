@@ -12,16 +12,7 @@ import { SupabaseService } from '../../service/supabase.service';
 })
 export class LocationComponent implements OnInit{
 
-    // Fixed destination (school/event location)
-  // destination = 'La St. Pauls Anglican Church';
-  
-  // // Google Maps directions link
-  // mapsLink = `https://www.google.com/maps/dir/?api=1&destination=${this.destination}`;
-
-// Place ID of destination (example ID)
-destinationPlaceId = 'la st. pauls anglican church';
-
-// Google Maps directions link with place_id
+destinationPlaceId = 'la st. pauls anglican church'; 
 mapsLink = `https://www.google.com/maps/dir/?api=1&destination=place_id:${this.destinationPlaceId}`;
 
 
