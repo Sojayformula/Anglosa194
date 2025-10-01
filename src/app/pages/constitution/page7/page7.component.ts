@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page7',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './page7.component.scss'
 })
 export class Page7Component {
+
+    constructor(private router: Router){}
+
+
+
+  goBack(){
+    this.router.navigate(["/constitution"])
+  }
+
 
 }
