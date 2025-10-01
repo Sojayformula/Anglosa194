@@ -24,6 +24,22 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { AdminlayoutComponent } from './admin/adminlayout/adminlayout.component';
 import { AdminmembersComponent } from './admin/adminmembers/adminmembers.component';
 import { UsersubmissionComponent } from './admin/usersubmission/usersubmission.component';
+import { Page19Component } from './pages/constitution/page19/page19.component';
+import { Page1Component } from './pages/constitution/page1/page1.component';
+import { Page2Component } from './pages/constitution/page2/page2.component';
+import { Page3Component } from './pages/constitution/page3/page3.component';
+import { Page4Component } from './pages/constitution/page4/page4.component';
+import { Page5Component } from './pages/constitution/page5/page5.component';
+import { Page7Component } from './pages/constitution/page7/page7.component';
+import { Page8Component } from './pages/constitution/page8/page8.component';
+import { Page9Component } from './pages/constitution/page9/page9.component';
+import { Page10Component } from './pages/constitution/page10/page10.component';
+import { Page11Component } from './pages/constitution/page11/page11.component';
+import { Page12Component } from './pages/constitution/page12/page12.component';
+import { Page13Component } from './pages/constitution/page13/page13.component';
+import { Page14Component } from './pages/constitution/page14/page14.component';
+import { Page15Component } from './pages/constitution/page15/page15.component';
+import { ConstitutionLayoutComponent } from './pages/constitution/constitution-layout/constitution-layout.component';
 
 
 export const routes: Routes = [
@@ -38,10 +54,30 @@ export const routes: Routes = [
     children: [
       {  path: "", redirectTo: "pages-layout", pathMatch: "full"},
       { path: 'gallery', component: GalleryComponent },
-      { path: 'constitution', component: ConstitutionComponent },
       { path: 'location', component: LocationComponent },
       { path: "login", component: LoginComponent },
-      // { path: "admin", component: AdminComponent },
+      { path: "constitution", component: ConstitutionComponent },
+      // { path: "constitution-layout", component: ConstitutionLayoutComponent, 
+      //   children:[
+          // {path: "", redirectTo: "page1", pathMatch: "full"},
+          {path: "page1", component: Page1Component}, 
+          {path: "page2", component: Page2Component},
+          {path: "page3", component: Page3Component},
+          {path: "page4", component: Page4Component},
+          {path: "page5", component: Page5Component},
+          {path: "page6", component: Page1Component},
+          {path: "page7", component: Page7Component},
+          {path: "page8", component: Page8Component},
+          {path: "page9", component: Page9Component},
+          {path: "page10", component: Page10Component},
+          {path: "page11", component: Page11Component},
+          {path: "page12", component: Page12Component},
+          {path: "page13", component: Page13Component},
+          {path: "page14", component: Page14Component},
+          {path: "page15", component: Page15Component},
+      //   ]
+      // },
+
       { path: "", component: AdminlayoutComponent,
         children: [
           {path: "", redirectTo:"adminmembers", pathMatch: "full"},
