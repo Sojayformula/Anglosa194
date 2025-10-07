@@ -56,10 +56,10 @@ export const routes: Routes = [
       { path: 'gallery', component: GalleryComponent },
       { path: 'location', component: LocationComponent },
       { path: "login", component: LoginComponent },
-      { path: "constitution", component: ConstitutionComponent },
-      // { path: "constitution-layout", component: ConstitutionLayoutComponent, 
-      //   children:[
-          // {path: "", redirectTo: "page1", pathMatch: "full"},
+      // { path: "constitution", component: ConstitutionComponent },
+      { path: "constitution-layout", component: ConstitutionLayoutComponent, 
+        children:[
+          {path: "", redirectTo: "page1", pathMatch: "full"},
           {path: "page1", component: Page1Component}, 
           {path: "page2", component: Page2Component},
           {path: "page3", component: Page3Component},
@@ -75,8 +75,8 @@ export const routes: Routes = [
           {path: "page13", component: Page13Component},
           {path: "page14", component: Page14Component},
           {path: "page15", component: Page15Component},
-      //   ]
-      // },
+        ]
+      },
 
       { path: "", component: AdminlayoutComponent,
         children: [

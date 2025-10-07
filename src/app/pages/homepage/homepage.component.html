@@ -26,14 +26,14 @@
     <!-- Desktop Nav links -->
     <div class="hidden md:flex gap-3 lg:gap-6">
       <a routerLink="/homepage"
-         routerLinkActive="bg-[#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+         routerLinkActive="bg-purple-800 border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
          class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E] transition-colors duration-200">Home</a>
       <!-- <a routerLink="/aboutlayout"
          routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
          class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E]  transition-colors duration-200">About Us</a> -->
          <div class="relative group">
       <button  routerLink="/aboutlayout" 
-          routerLinkActive="!bg-gray-300 !text-black font-bold border border-white" 
+          routerLinkActive="!bg-purple-800 font-bold border border-white" 
        class="flex items-center text-white px-3 py-2 rounded-lg text-sm sm:text-base hover:bg-gray-100 hover:text-black transition-colors duration-200 "
       >
         About
@@ -46,8 +46,8 @@
       <!-- Dropdown items -->
       <div
         class="absolute left-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-        <a routerLink="/aboutlayout" 
-          class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+        <!-- <a routerLink="/aboutlayout" 
+          class="block px-4 py-2 hover:bg-gray-100">About Us</a> -->
         <a routerLink="/aboutlayout/the-school"
           class="block px-4 py-2 hover:bg-gray-100">The School</a>
           <a routerLink="/aboutlayout/year-group"
@@ -61,7 +61,7 @@
       <a routerLink="/gallery"
          routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
          class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E]  transition-colors duration-200">Gallery</a>
-      <a routerLink="/constitution"
+      <a routerLink="/constitution-layout"
          routerLinkActive="bg-black [#F3F3F16E] border border-white rounded-lg hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
          class="text-white px-3 py-1 rounded-md text-sm sm:text-base hover:bg-[#F3F3F16E] transition-colors duration-200">Constitution</a>
       <a routerLink="/location"
@@ -115,7 +115,7 @@
 
   <!-- INFO SECTIONS -->
   <div class="flex flex-col lg:flex-row gap-10 justify-center mx-4 lg:mx-20 my-16">
-    <div class="flex-1 text-center border-2 rounded-lg shadow-lg p-6"  appScrollSlide [from]="'left'" [threshold]="0.2">
+    <div class="flex-1 text-center  p-6"  appScrollSlide [from]="'left'" [threshold]="0.2">
       <p class="font-bold text-2xl sm:text-3xl md:text-[35px]">
         La Anglican 1 JSS Year Group Association
       </p>
@@ -130,7 +130,7 @@
       </p>
     </div>
 
-    <div class="flex-1 text-center border-2 rounded-lg shadow-lg p-6" appScrollSlide [from]="'right'" [threshold]="0.2">
+    <div class="flex-1 text-center  p-6" appScrollSlide [from]="'right'" [threshold]="0.2">
       <p class="font-bold text-2xl sm:text-3xl md:text-[35px]">
         La Anglican 1 JSS Year Group Website
       </p>

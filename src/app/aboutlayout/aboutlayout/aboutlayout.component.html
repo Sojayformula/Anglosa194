@@ -9,7 +9,7 @@
     </div> -->
 
   <!-- NAVBAR -->
-  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-purple-800 top-0 left-0 w-full mt- 8">
+  <div class="bg- blue-800 h-16 md:h-20 z-50 flex items-center px-4 md:px-20 fixed bg-green-800 top-0 left-0 w-full mt- 8">
     <div class="flex justify-between items-center w-full text- red-500">
       
        <!-- SCHOOL LOGO -->
@@ -31,7 +31,7 @@
          <!-- class="flex items-center hover:text-gray-200" -->
     <div class="relative group">
       <button  routerLink="/aboutlayout" 
-          routerLinkActive="!bg-gray-300 !text-black font-bold border border-white" 
+          routerLinkActive="!bg-purple-800 font-bold border border-white" 
        class="flex items-center text-white px-3 py-2 rounded-lg text-sm sm:text-base hover:bg-gray-100 hover:text-black transition-colors duration-200 "
       >
         About
@@ -44,8 +44,8 @@
       <!-- Dropdown items -->
       <div
         class="absolute left-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-        <a routerLink="/aboutlayout" 
-          class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+        <!-- <a routerLink="/aboutlayout" 
+          class="block px-4 py-2 hover:bg-gray-100">About Us</a> -->
         <a routerLink="/aboutlayout/the-school"
           class="block px-4 py-2 hover:bg-gray-100">The School</a>
           <a routerLink="/aboutlayout/year-group"
@@ -57,13 +57,13 @@
       </div>
     </div>
 
-      <a routerLink="/gallery" routerLinkActive="bg-gray-300 font-bold  border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg" 
+      <a routerLink="/gallery" routerLinkActive="bg-purple-800 font-bold  border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg" 
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Gallery</a>
-      <a routerLink="/constitution" routerLinkActive="bg-gray-300 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+      <a routerLink="/constitution-layout" routerLinkActive="purple-800 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Constitution</a>
-      <a routerLink="/location" routerLinkActive="bg-gray-300 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
+      <a routerLink="/location" routerLinkActive="bg-purple-800 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Contact Us</a>
       <!-- <a (click)="scrollToContact()" routerLinkActive="bg-gray-300 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
@@ -72,7 +72,7 @@
     </div>
 
     <!-- Join button -->
-    <button (click)="admin()" class="hidden md:block bg-red-500 text-white px-4 py-2 rounded-lg text-sm md:text-base">
+    <button (click)="admin()" class="hidden md:block bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm md:text-base">
       Join
     </button>
       <!-- <a routerLink="/login" routerLinkActive="bg-gray-300 font-bold border border-white hover:border hover:border-white hover:bg-gray-200 hover:!text-green-500 transition-colors duration-200 hover:rounded-lg"
@@ -97,7 +97,7 @@
   <a routerLink="/location" (click)="toggleMenu()" class="block text-white">Location</a>
   <a (click)="scrollToContact(); toggleMenu()" class="block text-white cursor-pointer">Contact</a>
 
-   <button class="w- full bg-red-500 text-white font-semibold px-4 py-2 rounded-lg">
+   <button class="w- full bg-yellow-400 text-white font-semibold px-4 py-2 rounded-lg">
       Join 
     </button>
 </div>
