@@ -1,5 +1,5 @@
 
-<div class="overflow-hidden mb-20">
+<div class="overflow-hidden mb-20 ">
   
 
   <!-- HERO -->
@@ -79,22 +79,14 @@
 
 
 
-
-
-
-
 <!-- echo-landing.component.html -->
-<div class="min-h-screen bg-black flex items-center justify-center p-6">
-  <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="min-h-screen bg-black flex flex-col md:flex-row items-center justify-center p-6 " appScrollSlide [from]="'right'" [threshold]="0.2">
+
+  <div class="w-full max-w-7xl flex flex-col md:flex-row items-center justify-between gap-10">
+
     <!-- LEFT SECTION -->
-    <div class="md:col-span-6 flex flex-col justify-center px-6">
-      <h1 class="text-[3.2rem] md:text-[4rem] leading-[0.9] font-extralight text-white">
-        <!-- Photos<br />
-        and videos<br />
-        of the<br />
-        group events.<br />
-        Gallery
-      </h1> -->
+    <div class="flex-1 flex flex-col justify-center px-6">
+      <h1 class="text-[3rem] md:text-[4rem] leading-[0.9] font-extralight text-white mb-8">
         Meet the individuals<br />
         entrusted with<br />
         leading and<br />
@@ -102,56 +94,52 @@
         year group.<br />
       </h1>
 
-      <div class="mt-10 flex gap-6 items-end ">
-         <div class="mt-16 mb-10 w-[12rem] h-28 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg flex flex-col justify-center md:p-3 transform md:-rotate-6">
-          <!-- <div class="text-xs text-white/90 font-medium">Image</div>
-          <div class="text-sm text-white/80">project</div> -->
-          <a routerLink="#">
-          <img src="/seth.jpg">
-          <p class="text-white text-center">Chaiman</p>
-          </a>
-        </div>
+    <!-- CARD CONTAINER -->
+<div
+  class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-20 place-items-center"
+>
+  <!-- CARD 1 -->
+  <div class="w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
+    <a routerLink="#">
+      <img src="/seth.jpg" class="w-full h-[12rem] object-cover rounded-xl" />
+      <p class="text-white text-center mt-2">Chairman</p>
+    </a>
+  </div>
 
-        <div class="mt-16 mb-10 w-[12rem] h-28 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg flex flex-col justify-center p-3 transform md:rotate-6">
-          <a routerLink="#">
-          <img src="/osofo.png" class="h-[8rem] md:h-[13rem] ">
-          <p class="text-white text-center">Vice Chaiman</p>
-          </a>
-        </div>
+  <!-- CARD 2 -->
+  <div class="w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
+    <a routerLink="#">
+      <img src="/osofo.png" class="w-full h-[12rem] object-cover rounded-xl" />
+      <p class="text-white text-center mt-2">Vice Chairman</p>
+    </a>
+  </div>
 
-        <div class="mt-16 mb-10 w-[12rem] h-28 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg flex flex-col justify-center md:p-3 transform md:-rotate-6">
-          <!-- <div class="text-xs text-white/90 font-medium">Image</div>
-          <div class="text-sm text-white/80">project</div> -->
-          <a routerLink="#">
-          <img src="/seth.jpg">
-          <p class="text-white text-center">Chaiman</p>
-          </a>
-        </div>
+  <!-- CARD 3 -->
+  <div class="w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
+    <a routerLink="#">
+      <img src="/ama.png" class="w-full h-[12rem] object-cover rounded-xl" />
+      <p class="text-white text-center mt-2">Secretary</p>
+    </a>
+  </div>
 
-         <div class="mt-16 mb-10 w-[12rem] h-28 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg flex flex-col justify-center md:p-3 transform md:-rotate-6">
-          <!-- <div class="text-xs text-white/90 font-medium">Image</div>
-          <div class="text-sm text-white/80">project</div> -->
-          <a routerLink="#">
-          <img src="/seth.jpg">
-          <p class="text-white text-center">Chaiman</p>
-          </a>
-        </div>
+  <!-- CARD 4 -->
+  <div class="w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
+    <a routerLink="#">
+      <img src="/seth.jpg" class="w-full h-[12rem] object-cover rounded-xl" />
+      <p class="text-white text-center mt-2">Organizer</p>
+    </a>
+  </div>
 
-        <div class="mt-16 mb-10 w-[12rem] h-28 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg flex flex-col justify-center md:p-3 transform md:-rotate-6">
-          <!-- <div class="text-xs text-white/90 font-medium">Image</div>
-          <div class="text-sm text-white/80">project</div> -->
-          <a routerLink="#">
-          <img src="/seth.jpg">
-          <p class="text-white text-center">Chaiman</p>
-          </a>
-        </div>
+  <!-- CARD 5 -->
+  <div class="w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
+    <a routerLink="#">
+      <img src="/seth.jpg" class="w-full h-[12rem] object-cover rounded-xl" />
+      <p class="text-white text-center mt-2">Treasurer</p>
+    </a>
+  </div>
+</div>
 
-        <!-- <div class="w-40 h-32 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg flex flex-col justify-center p-3 transform rotate-3">
-          <div class="text-xs text-white/90 font-medium">Video</div>
-          <div class="text-sm text-white/80">project</div>
-        </div> -->
-      </div>
-
+      <!-- BUTTONS -->
       <div class="mt-12 flex gap-4">
         <button class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm">Photo</button>
         <button class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm">Video</button>
@@ -163,19 +151,26 @@
     </div>
 
     <!-- RIGHT SECTION (PHONE MOCKUP) -->
-    <div class="md:col-span-6 flex items-center justify-center px-6">
+    <div class="flex-1 flex items-center justify-center">
       <div class="relative">
-        <div class="w-[360px] h-[740px] rounded-3xl p-6 bg-gradient-to-b from-emerald-800/60 via-emerald-900/40 to-black shadow-2xl flex items-center justify-center" style="box-shadow: 0 40px 80px rgba(16,185,129,0.15);">
+        <div
+          class="w-[360px] h-[740px] rounded-3xl p-6 bg-gradient-to-b from-emerald-800/60 via-emerald-900/40 to-black shadow-2xl flex items-center justify-center"
+          style="box-shadow: 0 40px 80px rgba(16,185,129,0.15);"
+        >
           <div class="w-full h-full rounded-2xl bg-gradient-to-b from-black/90 via-emerald-900/60 to-black/80 border border-white/5 overflow-hidden flex flex-col">
             <div class="h-14 flex items-center justify-center text-white/80 text-sm">Voice chat</div>
 
             <div class="flex-1 p-6 flex flex-col items-center justify-center text-center">
-              <div class="w-40 h-40 rounded-full bg-gradient-to-r from-emerald-300/40 to-emerald-500/30 flex items-center justify-center shadow-inner">
+              <div
+                class="w-40 h-40 rounded-full bg-gradient-to-r from-emerald-300/40 to-emerald-500/30 flex items-center justify-center shadow-inner"
+              >
                 <div class="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center text-white text-2xl">⟲</div>
               </div>
 
               <p class="mt-8 text-sm text-white/75 max-w-xs">
-                A man in a sweater reaches his hand forward, the image partially blurred by motion, creating a sense of dynamism and...
+                A man in a sweater reaches his hand forward,
+                the image partially blurred by motion,
+                creating a sense of dynamism and...
               </p>
 
               <div class="mt-8 flex gap-6 items-center">
@@ -191,19 +186,14 @@
           </div>
         </div>
 
-        <div class="absolute -inset-4 rounded-3xl pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(16,185,129,0.08), transparent 40%);"></div>
+        <div
+          class="absolute -inset-4 rounded-3xl pointer-events-none"
+          style="background: radial-gradient(ellipse at center, rgba(16,185,129,0.08), transparent 40%);"
+        ></div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 

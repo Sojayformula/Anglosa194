@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { ScrollSlideDirective } from '../../animation/animation';
 
 @Component({
   selector: 'app-year-group',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ScrollSlideDirective],
   templateUrl: './year-group.component.html',
   styleUrl: './year-group.component.scss'
 })
