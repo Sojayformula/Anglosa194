@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ScrollSlideDirective } from '../../animation/animation';
 
@@ -9,9 +9,14 @@ import { ScrollSlideDirective } from '../../animation/animation';
   templateUrl: './year-group.component.html',
   styleUrl: './year-group.component.scss'
 })
-export class YearGroupComponent {
+export class YearGroupComponent implements OnInit{
 
     constructor( private router: Router){}
+
+
+      ngOnInit() {
+    this.updateScreenWidth();
+  }
 
   back(){
     this.router.navigate(['aboutlayout'])
@@ -36,6 +41,15 @@ setWoman(btn: string) {
 setSchool(btn: string) {
   this.activeBtn = btn;
 }
+
+
+  isMdScreen = false;
+
+
+  @HostListener('window:resize')
+  updateScreenWidth() {
+    this.isMdScreen = window.innerWidth >= 768; 
+  }
 
 
 
