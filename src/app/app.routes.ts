@@ -40,6 +40,12 @@ import { Page13Component } from './pages/constitution/page13/page13.component';
 import { Page14Component } from './pages/constitution/page14/page14.component';
 import { Page15Component } from './pages/constitution/page15/page15.component';
 import { ConstitutionLayoutComponent } from './pages/constitution/constitution-layout/constitution-layout.component';
+import { ChairmanComponent } from './aboutlayout/executive/chairman/chairman.component';
+import { VicechairmanComponent } from './aboutlayout/executive/vicechairman/vicechairman.component';
+import { SecretaryComponent } from './aboutlayout/executive/secretary/secretary.component';
+import { TreasurerComponent } from './aboutlayout/executive/treasurer/treasurer.component';
+import { ExecutivelayoutComponent } from './aboutlayout/executive/executivelayout/executivelayout.component';
+import { OrganizerComponent } from './aboutlayout/executive/organizer/oganizer.component';
 
 
 export const routes: Routes = [
@@ -102,15 +108,64 @@ export const routes: Routes = [
     ]
   },
 
-   { path: 'year-group',
+
+
+  //  { path: 'year-group',
+  //   component: YearGroupComponent,
+  //   children: [
+  //     { path: '', redirectTo: 'objective1', pathMatch: 'full' },  
+  //     { path: 'objective1', component: Objective1Component },
+  //     { path: 'objective2', component: Objective2Component },
+  //     { path: 'objective3', component: Objective3Component },
+ 
+
+  //      { path: "executivelayout", component: ExecutivelayoutComponent,
+  //     children: [
+  //        { path: '', redirectTo: 'chairman', pathMatch: 'full' }, 
+  //       { path: "chairman", component: ChairmanComponent },
+  //       { path: "vicechairman", component: VicechairmanComponent },
+  //       { path: "secretary", component: SecretaryComponent },
+  //       { path: "treasurer", component: TreasurerComponent },
+  //       { path: "organizer", component: OrganizerComponent },
+  //     ]
+  //   },
+   
+  // ]
+  // },
+
+
+
+
+   {
+    path: 'year-group',
     component: YearGroupComponent,
     children: [
-      { path: '', redirectTo: 'objective1', pathMatch: 'full' },  
+      // 👇 Default outlet (for objectives)
+      { path: '', redirectTo: 'objective1', pathMatch: 'full' },
       { path: 'objective1', component: Objective1Component },
       { path: 'objective2', component: Objective2Component },
       { path: 'objective3', component: Objective3Component },
+
+      // 👇 Named outlet for Executives
+      {
+        path: 'executivelayout',
+        outlet: 'executive',
+        component: ExecutivelayoutComponent,
+        children: [
+          { path: '', redirectTo: 'chairman', pathMatch: 'full' },
+          { path: 'chairman', component: ChairmanComponent },
+          { path: 'vicechairman', component: VicechairmanComponent },
+          { path: 'secretary', component: SecretaryComponent },
+          { path: 'treasurer', component: TreasurerComponent },
+          { path: 'organizer', component: OrganizerComponent },
+        ],
+      },
     ],
   },
+
+
+
+
 
 ]
 },

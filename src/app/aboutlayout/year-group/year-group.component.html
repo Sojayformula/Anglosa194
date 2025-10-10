@@ -97,15 +97,15 @@
 <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-20 place-items-center">
   <!-- CARD 1 -->
   <div class="w-[8rem] md:w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
-    <a routerLink="#">
+    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'chairman'] } }]">
       <img src="/seth.jpg" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
-      <p class="text-white text-center mt-2">Organizer</p>
+      <p class="text-white text-center mt-2">Chairman</p>
     </a>
   </div>
 
   <!-- CARD 2 -->
   <div class="w-[8rem] md:w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
-    <a routerLink="#">
+    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'vicechairman'] } }]">
       <img src="/osofo.png" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
       <p class="text-white text-center mt-2">Vice Chairman</p>
     </a>
@@ -113,7 +113,7 @@
 
   <!-- CARD 3 -->
   <div class="w-[8rem] md:w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
-    <a routerLink="#">
+    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'secretary'] } }]">
       <img src="/ama.png" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
       <p class="text-white text-center mt-2">Secretary</p>
     </a>
@@ -121,17 +121,17 @@
 
   <!-- CARD 4 -->
   <div class="w-[8rem] md:w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
-    <a routerLink="#">
-      <img src="/seth.jpg" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
-      <p class="text-white text-center mt-2">Organizer</p>
+    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'treasurer'] } }]">
+      <img src="/laryea.png" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
+      <p class="text-white text-center mt-2">Treasurer</p>
     </a>
   </div>
 
   <!-- CARD 5 -->
   <div class="w-[8rem] md:w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
-    <a routerLink="#">
+    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'organizer'] } }]">
       <img src="/seth.jpg" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
-      <p class="text-white text-center mt-2">Treasurer</p>
+      <p class="text-white text-center mt-2">Organizer</p>
     </a>
   </div>
 </div>
@@ -148,7 +148,7 @@
     </div>
 
     <!-- RIGHT SECTION (PHONE MOCKUP) -->
-    <div class="flex-1 flex items-center justify-center">
+     <div class="flex-1 flex items-center justify-center">
       <div class="relative">
         <div
           class="w-[360px] h-[740px] rounded-3xl p-6 bg-gradient-to-b from-emerald-800/60 via-emerald-900/40 to-black shadow-2xl flex items-center justify-center"
@@ -158,21 +158,22 @@
             <div class="h-14 flex items-center justify-center text-white/80 text-sm">Voice chat</div>
 
             <div class="flex-1 p-6 flex flex-col items-center justify-center text-center">
-              <div class="w-40 h-40 rounded-full bg-gradient-to-r from-emerald-300/40 to-emerald-500/30 flex items-center justify-center shadow-inner">
-                <img src="/osofo.png" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
-                <!-- <div class="w-24 h-24 rounded-full bg-white/5 flex items-center justify-center text-white text-2xl">⟲</div> -->
+              <div class="w-[13rem] h-40 [14rem] rounded-full bg-gradient-to-r from-emerald-300/40 to-emerald-500/30 flex items-center justify-center shadow-inner">
+               <div class="mt-36">
+                 <router-outlet name="executive" ></router-outlet>
+                 </div>
               </div>
 
               <p class="mt-8 text-sm text-white/75 max-w-xs">
-                A man in a sweater reaches his hand forward,
+                <!-- A man in a sweater reaches his hand forward,
                 the image partially blurred by motion,
-                creating a sense of dynamism and...
+                creating a sense of dynamism and... -->
               </p>
 
               <div class="mt-8 flex gap-6 items-center">
-                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">≡</div>
+                <!-- <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">≡</div>
                 <div class="w-16 h-16 rounded-full bg-emerald-500/90 flex items-center justify-center text-black text-xl shadow-lg">🎤</div>
-                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">✕</div>
+                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">✕</div> -->
               </div>
             </div>
 
@@ -189,8 +190,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
 
+ 
 
 
 
