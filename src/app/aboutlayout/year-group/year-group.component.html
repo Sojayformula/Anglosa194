@@ -105,7 +105,7 @@
 
   <!-- CARD 2 -->
   <div class="w-[8rem] md:w-[12rem] rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 shadow-lg">
-    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'vicechairman'] } }]">
+    <a [routerLink]="[{ outlets: { executive: ['executivelayout', 'vice'] } }]">
       <img src="/osofo.png" class="w-[8rem] md:w-full h-[12rem] object-cover rounded-xl" />
       <p class="text-white text-center mt-2">Vice Chairman</p>
     </a>
@@ -155,11 +155,33 @@
           style="box-shadow: 0 40px 80px rgba(16,185,129,0.15);"
         >
           <div class="w-full h-full rounded-2xl bg-gradient-to-b from-black/90 via-emerald-900/60 to-black/80 border border-white/5 overflow-hidden flex flex-col">
-            <div class="h-14 flex items-center justify-center text-white/80 text-sm">Voice chat</div>
+            <div class="h-14 flex items-center justify-center text-white/80 text-sm">
+              <!-- Example 1: simple route match -->
+          <p *ngIf="currentRoute.includes('chairman')" class="text-white">
+             Meet our Chairman — Seth Akwada
+          </p>
 
-            <div class="flex-1 p-6 flex flex-col items-center justify-center text-center">
-              <div class="w-[13rem] h-40 [14rem] rounded-full bg-gradient-to-r from-emerald-300/40 to-emerald-500/30 flex items-center justify-center shadow-inner">
-               <div class="mt-36">
+           <p *ngIf="currentRoute.includes('vice')" class="text-white">
+              Meet our Vice Chairman — Theophilus Addo
+           </p>
+
+            <p *ngIf="currentRoute.includes('secretary')" class="text-white">
+               Meet our Secretary — Henrietta Osei
+            </p>
+
+            <p *ngIf="currentRoute.includes('treasurer')" class="text-white">
+               Meet our Treasurer — Emmanuel Laryea
+            </p>
+
+            <p *ngIf="currentRoute.includes('organizer')" class="text-white">
+               Meet our Organizer — Emmanuel Otoo
+            </p>
+
+            </div>
+
+            <div class="flex-1 p-6 mt-[4rem] flex flex-col items-center justify-center text-center">
+              <div class="w- [13rem] h- 40 [14rem] rounded-full bg- gradient-to-r from-emerald-300/40 to-emerald-500/30 flex items-center justify-center shadow-inner">
+               <div class="mt-">
                  <router-outlet name="executive" ></router-outlet>
                  </div>
               </div>

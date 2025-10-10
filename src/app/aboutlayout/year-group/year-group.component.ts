@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { ScrollSlideDirective } from '../../animation/animation';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-year-group',
@@ -11,7 +12,18 @@ import { ScrollSlideDirective } from '../../animation/animation';
 })
 export class YearGroupComponent implements OnInit{
 
-    constructor( private router: Router){}
+   currentRoute = '';
+
+    constructor( private router: Router){
+
+       // Listen for route changes
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        this.currentRoute = event.urlAfterRedirects;
+        // console.log(this.currentRoute);
+      });
+    }
 
 
       ngOnInit() {
@@ -50,7 +62,6 @@ setSchool(btn: string) {
   updateScreenWidth() {
     this.isMdScreen = window.innerWidth >= 768; 
   }
-
 
 
 

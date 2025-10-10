@@ -154,7 +154,7 @@ export const routes: Routes = [
         children: [
           { path: '', redirectTo: 'chairman', pathMatch: 'full' },
           { path: 'chairman', component: ChairmanComponent },
-          { path: 'vicechairman', component: VicechairmanComponent },
+          { path: 'vice', component: VicechairmanComponent },
           { path: 'secretary', component: SecretaryComponent },
           { path: 'treasurer', component: TreasurerComponent },
           { path: 'organizer', component: OrganizerComponent },
