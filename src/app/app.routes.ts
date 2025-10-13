@@ -46,6 +46,7 @@ import { SecretaryComponent } from './aboutlayout/executive/secretary/secretary.
 import { TreasurerComponent } from './aboutlayout/executive/treasurer/treasurer.component';
 import { ExecutivelayoutComponent } from './aboutlayout/executive/executivelayout/executivelayout.component';
 import { OrganizerComponent } from './aboutlayout/executive/organizer/oganizer.component';
+import { JerryComponent } from './aboutlayout/executive/jerry/jerry.component';
 
 
 export const routes: Routes = [
@@ -158,6 +159,7 @@ export const routes: Routes = [
           { path: 'secretary', component: SecretaryComponent },
           { path: 'treasurer', component: TreasurerComponent },
           { path: 'organizer', component: OrganizerComponent },
+           { path: 'jerry', component: JerryComponent },
         ],
       },
     ],
