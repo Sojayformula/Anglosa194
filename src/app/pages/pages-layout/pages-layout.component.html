@@ -14,7 +14,7 @@
 
     <!-- Links -->
     <div class="hidden md:flex gap-4">
-      <a routerLink="/homepage" routerLinkActive="bg-purple-800 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
+      <a routerLink="/homepage" routerLinkActive="backdrop-blur-sm bg-white/30 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 rounded-md text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Home Page</a>
       <!-- <a routerLink="/aboutlayout" routerLinkActive="bg-gray-300 font-bold !text-black border border-white !text-black hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg" 
@@ -22,7 +22,7 @@
         About Us</a> -->
         <div class="relative group">
       <button  routerLink="/aboutlayout" 
-          routerLinkActive="!bg-purple-800 font-bold border border-white" 
+          routerLinkActive="!backdrop-blur-sm bg-white/30 font-bold border border-white" 
        class="flex items-center text-white px-3 py-2 rounded-lg text-sm sm:text-base hover:bg-gray-100 hover:text-black transition-colors duration-200 "
       >
         About
@@ -47,13 +47,13 @@
           class="block px-4 py-2 hover:bg-gray-100">Teachers</a>
       </div>
     </div>
-      <a routerLink="/gallery" routerLinkActive="bg-purple-800 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg" 
+      <a routerLink="/gallery" routerLinkActive="backdrop-blur-sm bg-white/30 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg" 
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Gallery</a>
       <a routerLink="/constitution-layout" routerLinkActive="bg-purple-800 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Constitution</a>
-      <a routerLink="/location" routerLinkActive="bg-purple-800 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
+      <a routerLink="/location" routerLinkActive="backdrop-blur-sm bg-white/30 font-bold border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
         class="text-white  px-3 py-2 text-sm md:text-base hover:!border hover:!border-white  hover:bg-gray-100 hover:text-black transition-colors duration-200 hover:!rounded-lg">
         Contact Us</a>
       <!-- <a (click)="scrollToContact()" routerLinkActive="bg-gray-300 font-bold !text-black border border-white rounded-lg hover:border hover:!text-green-500 hover:border-white hover:bg-gray-200 transition-colors duration-200 hover:rounded-lg"
@@ -62,7 +62,7 @@
     </div>
 
     <!-- Join button -->
-    <button (click)="admin()" class="hidden md:block bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm md:text-base">
+    <button (click)="admin()" class="hidden md:block backdrop-blur-sm bg-white/30 text-white px-4 py-2 rounded-lg text-sm md:text-base">
       Join
     </button>
 
@@ -80,7 +80,7 @@
   <a routerLink="/location" (click)="toggleMenu()" class="block text-white">Location</a>
   <a (click)="scrollToContact(); toggleMenu()" class="block text-white cursor-pointer">Contact</a>
 
-   <button (click)="admin()" class="w- full bg-yellow-400 text-white font-semibold px-4 py-2 rounded-lg">
+   <button (click)="admin()" class="w- full backdrop-blur-sm bg-white/30 text-white font-semibold px-4 py-2 rounded-lg">
       Join 
     </button>
 </div>
