@@ -31,17 +31,19 @@
       </div>
 
       <!-- MENU ITEMS -->
-      <nav class="flex-1 mt-6 space-y-3 px-1">
+       <nav class="flex-1 mt-6 space-y-3 px-1 text-[10px]">
         <a routerLink="page1" class="flex items-center gap-3 px-4 py-2 hover:bg-purple-800 transition">
           <i class="fa-solid fa-store"></i>
           <span [class.opacity-0]="!isOpen" [class.opacity-100]="isOpen" class="transition-opacity duration-300">
-            Members1
+            ARTICLE ONE-NAME <br/> ARTICLE TWO-AIM <br/> ARTICLE THREE-OBJECTIVES <br/> ARTICLE FOUR-MEMBERSHIP
           </span>
         </a>
 
         <a routerLink="page2" class="flex items-center gap-3 px-4 py-2 hover:bg-purple-800 transition">
           <i class="fa-solid fa-book-open"></i>
-          <span [class.opacity-0]="!isOpen" [class.opacity-100]="isOpen" class="transition-opacity duration-300">Members2</span>
+          <span [class.opacity-0]="!isOpen" [class.opacity-100]="isOpen" class="transition-opacity duration-300">
+             ARTICLE FIVE-RIGHT OF MEMBERSHIP <br/> ARTICLE SIX-ADMISTRATION <br/> ARTICLE SEVEN-STRUCTURE <br/> ARTICLE EIGHT-DUTIES OF OFFICERS
+          </span>
         </a>
 
         <a routerLink="page3" class="flex items-center gap-3 px-4 py-2 hover:bg-purple-800 transition">
@@ -89,7 +91,7 @@
   </aside>
 
   <!-- MAIN CONTENT -->
-  <div class="flex-1 ml-16 md:ml-64 transition-all duration-500 p-4 mb-10 ">
+  <div class="flex-1 ml- 16 md:ml-64 transition-all duration-500 p-4 mb-10 overflow-auto">
     <router-outlet></router-outlet>
   </div>
 </div>

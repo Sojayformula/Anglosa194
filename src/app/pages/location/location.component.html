@@ -1,6 +1,6 @@
 
     <!-- google map -->
-      <div class="bg-gray-100 w-full h- screen full [400px]  ">
+      <div class="bg-gray-100 w-full">
 
         <section>
         <div class="text-center relative top-10 font-extrabold text-4xl">
@@ -15,11 +15,12 @@
         <p class="text-center font-bold">Click the image for direction</p>
       </div>
 
-     <div class="w-[35rem]">
+     <div class="md:w-[35rem]">
     <div class="max-w-lg mx-auto mt-1 p-6 bg-white shadow rounded-lg border border-black">
     <h2 class=" text-xl text-center font-bold mb-4 ">Submit your comment</h2>
 
-    <form (ngSubmit)="submit()">
+    <!-- form -->
+    <form (ngSubmit)="submit()" class="">
     <input [(ngModel)]="username" name="username" type="text" placeholder="Your Name"
       class="w-full mb-3 p-2 rounded border border-black hover:border-green-500" required>
 
@@ -53,31 +54,31 @@
 
 
 <!-- BACKGROUND IMAGE -->
- <div class="relative top- [-6rem]">
+ <div class="overflow-auto">
   <section>
-     <div class="bg-[url('/thesch3.jpg')] bg-no-repeat bg-center bg-cover h-[25rem] mt-32">
+     <div class="bg-[url('/thesch3.jpg')] bg-no-repeat bg-cover h-[25rem] mt-32 overflow-auto">
     
-      <div class="bg-black w-screen h-full scree bg-opacity-50">
-        <section class="flex">
-        <div class="mx-20 relative top-[5rem] space-y-10">
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
+      <div class="bg-black h-full bg-opacity-50 overflow-auto">
+        <section class="flex gap-20 md:gap- mx-4 md:justify-center">
+        <div class="md:mx- 20 relative top-[5rem] space-y-10">
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/phone.png" class="w-8 bg-white">+233054233399</p>
         </div>
 
-        <div class="mx-32 relative top-[5rem] space-y-10">
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
+        <div class="md:mx- 32 relative top-[5rem] space-y-10">
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/whatsapp1.png" class="w-8 bg-white">+233054233399</p>
         </div>
 
-         <div class="mx-32 relative top-[5rem] space-y-10">
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
-          <p class="text-white [#fadb5f]  text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
+         <div class="md:mx- 32 relative top-[5rem] space-y-10">
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
+          <p class="text-white text-[20px] md:text-2xl flex gap-3"><img src="/email.png" class="w-8 bg-white">anglosa&#64;yahoo.com</p>
         </div>
         </section>
       </div>
