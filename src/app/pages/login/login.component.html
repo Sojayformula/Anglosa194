@@ -1,9 +1,9 @@
-
+<!-- 
 <div class="flex items-center justify-center min-h-screen bg-gray-100 mt-20">
   <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
     <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
 
-    <!-- Email -->
+    Email
     <div class="mb-4">
       <label class="block text-gray-700">Email</label>
       <input
@@ -14,7 +14,7 @@
       />
     </div>
 
-    <!-- Password -->
+    Password
     <div class="mb-6">
       <label class="block text-gray-700">Password</label>
       <input
@@ -25,12 +25,12 @@
       />
     </div>
 
-    <!-- Error message -->
+    Error message
     <div *ngIf="errorMessage" class="mb-4 text-red-500 text-sm">
       {{ errorMessage }}
     </div>
 
-    <!-- Login button -->
+    Login button
     <button
       (click)="login()"
       class="w-full bg-gradient-to-b from-purple-400 via-purple-500 to-purple-800 blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
@@ -38,5 +38,112 @@
       Login
     </button>
   </div>
+</div> -->
+
+
+
+
+
+
+
+<div class="flex flex-col justify-center items-center mt-44 relative top-[-80px] z-10 ">
+  <div class="border rounded-2xl">
+    
+    <div >
+       <p class="text-[24.45px] text-[#2A343A] font-bold text-center">Sign In To Your Account.</p> 
+
+         <small class="text-[#7C7C7C] flex justify-center">
+        Enter your email and password
+    </small>
+    </div>
+
+
+
+ <div class="flex justify-center mx-10 mb-10">
+ <div > 
+     <div class="mt-">
+    <label for="email" class="text-[#7C7C7C] mt-3 block text-[15px]">Email</label>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      required
+      placeholder="Example@email.com"
+      class="text-[#7C7C7C] border-2 border-[#D7D7D7] bg-[#F2F2F2] w-[350px] lg:w-[612px] h-[55px] rounded-[10px] mt-1 px-5"
+    />
+    <div class="text-red-500">
+        <!-- password is required. -->
+      </div>
+       <div *ngIf="errorMessage" class="mb-4 text-red-500 text-sm">
+      {{ errorMessage }}
+    </div>
+
+    
+      <div>
+        Enter a valid password.
+      </div>
+  </div>
+  
+     <div class="mt-6">
+    <label for="password" class="text-[#7C7C7C] mt-3 block text-[15px]">Password:</label>
+    <input
+      [type]="show ? 'text' : 'password'"
+      type="password"
+      [(ngModel)]="password"
+      required
+      placeholder="****************"
+      class="text-[#7C7C7C] border-2 border-[#D7D7D7] bg-[#F2F2F2] w-[350px] lg:w-[612px] h-[55px] rounded-[10px] mt-1 px-5"
+    /> 
+
+
+
+     <div  class="text-red-500">
+        <!-- password is required. -->
+      </div>
+    
+      <div >
+        Enter a valid password.
+      </div>
+
+      <div class="relative right-6">
+        <button type="button" (click)="show = !show" class="absolute right-2 top-[-60px] text-gray-500 ">
+          <img *ngIf="!show" src="/invisible.png"  class="w-5 h-5" />
+          <img *ngIf="show" src="/visible.png" class="w-5 h-5" />
+        </button>
+      </div> 
+      
+     <!-- <p *ngIf="!isValidPassword()" class="text-red-500 text-sm">
+      Password must be at least 6 characters.
+    </p>  -->
+   </div>
+  
+                    <!-- checkbox -->
+    <div class="flex justify-between mx-2 mt-4 ">
+      <div class="flex space-x-2">
+      <input
+      type="checkbox"
+      lass="peer hidden"
+      />
+      <!-- <div class="mt-2 w-[12px] h-[12px] rounded-2 border border-gray-400 bg-gray-200 peer-checked:bg-red-500"></div> -->
+      <span class="text-[#7C7C7C]">Remember me</span>
+    </div>   
+
+              <!-- Forgot password -->
+       <div  class="forgot-password text-[#7C7C7C]">
+        <a class="cursor-pointer">Forgot Password?</a>
+      </div> 
+    </div>  
+
+
+     <button
+      (click)="login()"
+      class="font-semibold font-outfit  bg-gradient-to-b from-purple-400 via-purple-500 to-purple-800  bg- [linear-gradient(to_right,_#5FA3FF,_#4393FF)] text-white y text-[16px] px-4 h-[55px] rounded-[10px] mt-6 w-full"
+    >
+    Login
+    </button>
+
+  </div>
 </div>
 
+</div>
+</div>
+  
