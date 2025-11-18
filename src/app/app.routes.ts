@@ -15,7 +15,7 @@ import { ObjectiveLayoutComponent } from './objectives/objective-layout/objectiv
 import { NgModule } from '@angular/core';
 import { Objective3Component } from './aboutlayout/objectives/objective3/objective3.component';
 import { Objective2Component } from './aboutlayout/objectives/objective2/objective2.component';
-import { LocationComponent } from './pages/location/location.component';
+import { LocationComponent } from './pages/contactUs/location.component';
 import { MembersComponent } from './aboutlayout/tableLayout/table-layout/members/members.component';
 import { TableLayoutComponent } from './aboutlayout/tableLayout/table-layout/table-layout.component';
 import { TeachersComponent } from './aboutlayout/tableLayout/table-layout/teachers/teachers.component';
