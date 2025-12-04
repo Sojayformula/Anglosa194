@@ -150,6 +150,7 @@ module.exports = {
       fontFamily: {
         barlow: ['"Barlow Condensed"', 'sans-serif'],
       },
+       
     },
   },
   plugins: [],
